@@ -871,7 +871,68 @@ body {
 
   </div>
 </section>
+<section class="areas">
+  <h2>Areas We Serve</h2>
+  <div class="areas-grid">
+    <span>Snohomish</span>
+    <span>Monroe</span>
+    <span>Lake Stevens</span>
+    <span>Everett</span>
+    <span>Marysville</span>
+    <span>Mill Creek</span>
+    <span>Mukilteo</span>
+    <span>Bothell</span>
+  </div>
+  <p class="areas-note">Don't see your town? <a href="#contact">Ask me</a> — I probably cover it.</p>
+</section>
 
+<style>
+.areas {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+.areas h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+  color: #1a1a1a;
+}
+.areas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+.areas-grid span {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.areas-grid span:hover {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+}
+.areas-note {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 16px;
+}
+.areas-note a {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: underline;
+}
+</style>
 <!-- TESTIMONIALS -->
 <section class="section-testimonials" id="testimonials">
   <div class="wave-top-down"></div>
