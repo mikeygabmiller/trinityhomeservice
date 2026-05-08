@@ -143,7 +143,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* Big primary CTA — main conversion button */
 .btn-cta {
   background: var(--blue);
   color: white !important;
@@ -261,7 +260,6 @@ body {
 
 .phone-link:hover, .email-link:hover { opacity: 0.7; }
 
-/* water droplet decorations */
 .droplet {
   position: absolute;
   pointer-events: none;
@@ -299,15 +297,52 @@ body {
   transform: rotate(10deg);
 }
 
+/* ===== TRUST BAR ===== */
+.trust-bar {
+  background: white;
+  padding: 50px 5%;
+  border-top: 1px solid #eef1f9;
+  border-bottom: 1px solid #eef1f9;
+}
+
+.trust-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  color: var(--blue);
+}
+
+.trust-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.trust-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
 /* ===== SERVICES ===== */
 .section-services {
   background: var(--bg-soft);
   padding: 110px 5% 120px;
   position: relative;
-}
-
-.wave-top {
-  display: none;
 }
 
 .section-services .section-title {
@@ -379,19 +414,59 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Wave divider — flowing water between sections */
-.wave-divider {
-  width: 100%;
-  height: 70px;
-  display: block;
-  position: relative;
-  z-index: 1;
+/* ===== AREAS ===== */
+.areas {
+  text-align: center;
+  padding: 90px 5%;
+  background: white;
 }
 
-.wave-divider svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.areas .section-title {
+  margin-bottom: 40px;
+}
+
+.areas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto 24px;
+}
+
+.areas-grid span {
+  background: var(--bg-soft);
+  border: 1.5px solid var(--bg-tint);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.areas-grid span:hover {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 62, 176, 0.25);
+}
+
+.areas-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-light);
+  margin-top: 10px;
+}
+
+.areas-note a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -409,14 +484,13 @@ body {
   left: 0;
   width: 100%;
   height: 70px;
-  background: var(--bg-soft);
+  background: white;
   -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
   -webkit-mask-size: 100% 100%;
   mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
   mask-size: 100% 100%;
 }
 
-/* wave bottom — testimonials into contact */
 .wave-bottom {
   position: absolute;
   bottom: -1px;
@@ -558,7 +632,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -667,8 +740,16 @@ body {
   .btn-cta { padding: 18px 36px; font-size: 15px; width: auto; }
   .phone-link, .email-link { font-size: 16px; }
 
+  .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 20px; }
+  .trust-bar { padding: 40px 5%; }
+  .trust-icon { width: 36px; height: 36px; }
+  .trust-label { font-size: 12px; }
+
   .section-title { font-size: clamp(40px, 9vw, 64px); margin-bottom: 40px; }
   .section-services { padding: 80px 5% 90px; }
+
+  .areas { padding: 70px 5%; }
+  .areas-grid span { padding: 10px 18px; font-size: 14px; }
 
   .testimonial { padding: 0 36px; }
   .testimonial-text { font-size: 16px; }
@@ -735,7 +816,7 @@ body {
   </div>
   <h1>Trinity Home Service</h1>
   <div class="hero-content">
-    <p class="hero-tagline">Local exterior cleaning you can trust.  windows, gutters, roof, and pressure washing. fast booking, fair pricing, flawless results. <strong>Free quote in under 24 hours.</strong></p>
+    <p class="hero-tagline">Local exterior cleaning you can trust. windows, gutters, roof, and pressure washing. fast booking, fair pricing, flawless results. <strong>Free quote in under 24 hours.</strong></p>
     <div class="hero-buttons">
       <a href="#contact" class="btn-cta">GET A FREE QUOTE</a>
     </div>
@@ -746,7 +827,8 @@ body {
     </div>
   </div>
 </section>
-<!-- TRUST BAR — paste between </section> (hero) and <section class="section-services"> -->
+
+<!-- TRUST BAR -->
 <section class="trust-bar">
   <div class="trust-inner">
     <div class="trust-item">
@@ -783,62 +865,13 @@ body {
   </div>
 </section>
 
-<style>
-.trust-bar {
-  background: white;
-  padding: 50px 5%;
-  border-top: 1px solid #eef1f9;
-  border-bottom: 1px solid #eef1f9;
-}
-
-.trust-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  align-items: center;
-}
-
-.trust-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 14px;
-  color: var(--blue);
-}
-
-.trust-icon {
-  width: 42px;
-  height: 42px;
-}
-
-.trust-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--text);
-  letter-spacing: 0.04em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-@media (max-width: 720px) {
-  .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 20px; }
-  .trust-bar { padding: 40px 5%; }
-  .trust-icon { width: 36px; height: 36px; }
-  .trust-label { font-size: 12px; }
-}
-</style>
 <!-- SERVICES -->
 <section class="section-services" id="services">
-  <div class="wave-top"></div>
   <h2 class="section-title">Our Services</h2>
   <div class="services-grid">
 
     <div class="service-card">
-      <img class="service-photo" src="https://i.ibb.co/prQvmkG8/Screenshot-2026-05-08-3-31-27-PM.png=format&fit=crop&w=800&q=80" alt="Clean window">
+      <img class="service-photo" src="https://i.ibb.co/prQvmkG8/Screenshot-2026-05-08-3-31-27-PM.png" alt="Clean window">
       <div class="service-body">
         <h3 class="service-title">Window Cleaning</h3>
         <p class="service-desc">Crystal-clear results for residential and commercial windows. Streak-free finish guaranteed, inside and out.</p>
@@ -846,7 +879,7 @@ body {
     </div>
 
     <div class="service-card">
-      <img class="service-photo" src="https://i.ibb.co/0y6MGjFh/cleangutters.jpg?auto=format&fit=crop&w=800&q=80" alt="Clean gutter">
+      <img class="service-photo" src="https://i.ibb.co/0y6MGjFh/cleangutters.jpg" alt="Clean gutter">
       <div class="service-body">
         <h3 class="service-title">Gutter Cleaning</h3>
         <p class="service-desc">Full debris removal, flush-outs, and downspout clearing to protect your home from water damage year-round.</p>
@@ -854,7 +887,7 @@ body {
     </div>
 
     <div class="service-card">
-      <img class="service-photo" src="https://i.ibb.co/0p3SsFJv/house-roof.jpg?auto=format&fit=crop&w=800&q=80" alt="Clean roof">
+      <img class="service-photo" src="https://i.ibb.co/0p3SsFJv/house-roof.jpg" alt="Clean roof">
       <div class="service-body">
         <h3 class="service-title">Roof Cleaning</h3>
         <p class="service-desc">Soft-wash treatments that safely remove moss, algae, and staining - extending the life of your roof without damage.</p>
@@ -862,7 +895,7 @@ body {
     </div>
 
     <div class="service-card">
-      <img class="service-photo" src="https://i.ibb.co/FkMg5d04/pressure-washing.webp?auto=format&fit=crop&w=800&q=80" alt="Clean driveway">
+      <img class="service-photo" src="https://i.ibb.co/FkMg5d04/pressure-washing.webp" alt="Clean driveway">
       <div class="service-body">
         <h3 class="service-title">Pressure Washing</h3>
         <p class="service-desc">High-powered cleaning for driveways, walkways, siding, decks, and patios. Restore surfaces to like-new condition.</p>
@@ -871,8 +904,10 @@ body {
 
   </div>
 </section>
+
+<!-- AREAS -->
 <section class="areas">
-  <h2>Areas We Serve</h2>
+  <h2 class="section-title">Areas We Serve</h2>
   <div class="areas-grid">
     <span>Snohomish</span>
     <span>Monroe</span>
@@ -886,53 +921,6 @@ body {
   <p class="areas-note">Don't see your town? <a href="#contact">Ask me</a> — I probably cover it.</p>
 </section>
 
-<style>
-.areas {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f8f9fa;
-}
-.areas h2 {
-  font-size: 2rem;
-  margin-bottom: 28px;
-  color: #1a1a1a;
-}
-.areas-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  max-width: 720px;
-  margin: 0 auto 20px;
-}
-.areas-grid span {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #333;
-  transition: all 0.2s ease;
-  cursor: default;
-}
-.areas-grid span:hover {
-  background: #1a1a1a;
-  color: #fff;
-  border-color: #1a1a1a;
-  transform: translateY(-2px);
-}
-.areas-note {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 16px;
-}
-.areas-note a {
-  color: #1a1a1a;
-  font-weight: 600;
-  text-decoration: underline;
-}
-</style>
 <!-- TESTIMONIALS -->
 <section class="section-testimonials" id="testimonials">
   <div class="wave-top-down"></div>
@@ -981,25 +969,27 @@ body {
       </div>
     </div>
 
-  <form class="contact-form" id="quoteForm" action="https://formsubmit.co/louismiller@trinityexteriorco.com" method="POST">
-  <input type="hidden" name="_subject" value="New Quote Request - Trinity Home Service">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="text" name="_honey" style="display:none">
-  <div class="form-group">
-    <label for="name">Name *</label>
-    <input type="text" id="name" name="name" required>
+    <form class="contact-form" id="quoteForm" action="https://formsubmit.co/louismiller@trinityexteriorco.com" method="POST">
+      <input type="hidden" name="_subject" value="New Quote Request - Trinity Home Service">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address *</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+      <button type="submit" class="btn-primary form-submit">Send</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="phone">Phone Number *</label>
-    <input type="tel" id="phone" name="phone" required>
-  </div>
-  <div class="form-group">
-    <label for="address">Address *</label>
-    <input type="text" id="address" name="address" required>
-  </div>
-  <button type="submit" class="btn-primary form-submit">Send</button>
-  <div class="form-status" id="formStatus"></div>
-</form>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -1044,7 +1034,7 @@ setInterval(() => {
   showTestimonial((current + 1) % testimonials.length);
 }, 6500);
 
-// form submit (Web3Forms)
+// form submit (FormSubmit — matches form action above)
 const form = document.getElementById('quoteForm');
 const status = document.getElementById('formStatus');
 
@@ -1055,17 +1045,17 @@ form.addEventListener('submit', async (e) => {
 
   const formData = new FormData(form);
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch(form.action, {
       method: 'POST',
-      body: formData
+      body: formData,
+      headers: { 'Accept': 'application/json' }
     });
-    const data = await res.json();
-    if (data.success) {
+    if (res.ok) {
       status.textContent = "Thanks! I'll be in touch shortly.";
       status.className = 'form-status success';
       form.reset();
     } else {
-      throw new Error(data.message || 'Submission failed');
+      throw new Error('Submission failed');
     }
   } catch (err) {
     status.textContent = 'Something went wrong. Please call 425-595-7758.';
