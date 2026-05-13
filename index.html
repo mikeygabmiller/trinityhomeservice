@@ -470,6 +470,7 @@ body {
 }
 
 /* ===== TESTIMONIALS ===== */
+/* ===== TESTIMONIALS ===== */
 .section-testimonials {
   background: var(--blue);
   padding: 110px 5% 130px;
@@ -477,111 +478,68 @@ body {
   color: white;
   overflow: hidden;
 }
-
 .wave-top-down {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 70px;
+  position: absolute; top: -1px; left: 0; width: 100%; height: 70px;
   background: white;
   -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
   -webkit-mask-size: 100% 100%;
   mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
   mask-size: 100% 100%;
 }
-
 .wave-bottom {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 70px;
+  position: absolute; bottom: -1px; left: 0; width: 100%; height: 70px;
   background: white;
   -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,0 L0,50 C240,0 480,80 720,50 C960,20 1200,70 1440,40 L1440,0 Z' fill='black'/></svg>") no-repeat;
   -webkit-mask-size: 100% 100%;
   mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,0 L0,50 C240,0 480,80 720,50 C960,20 1200,70 1440,40 L1440,0 Z' fill='black'/></svg>") no-repeat;
   mask-size: 100% 100%;
 }
-
-.testimonials {
-  max-width: 850px;
-  margin: 30px auto 0;
-  position: relative;
-  text-align: center;
-  min-height: 220px;
+.reviews-wrap { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+.reviews-header { text-align: center; margin-bottom: 48px; }
+.reviews-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.08); padding: 10px 20px;
+  border-radius: 100px; margin-bottom: 22px;
+  font-family: 'Inter', sans-serif; font-size: 12px;
+  font-weight: 500; letter-spacing: 1px;
 }
-
-.testimonial {
-  display: none;
-  padding: 0 60px;
-  animation: fadeIn 0.4s ease;
+.reviews-rating {
+  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-size: 64px; line-height: 1; margin-bottom: 10px;
 }
-
-.testimonial.active { display: block; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+.reviews-stars { font-size: 22px; letter-spacing: 5px; color: #FBBC05; margin-bottom: 10px; }
+.reviews-count { font-family: 'Inter', sans-serif; font-size: 14px; opacity: 0.75; }
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
 }
-
-.testimonial-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 12px;
+.review-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 24px;
+  transition: background 0.2s, transform 0.2s;
 }
-
-.testimonial-divider {
-  width: 60px;
-  height: 1px;
-  background: white;
-  margin: 0 auto 22px;
+.review-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-2px); }
+.review-stars { color: #FBBC05; font-size: 14px; letter-spacing: 3px; margin-bottom: 14px; }
+.review-text {
+  font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6;
+  font-style: italic; margin: 0 0 18px; opacity: 0.95;
 }
-
-.testimonial-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  font-style: italic;
+.review-name {
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; margin-bottom: 2px;
 }
-
-.testimonial-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 12px;
-  opacity: 0.85;
-  transition: opacity 0.2s;
+.review-location { font-family: 'Inter', sans-serif; font-size: 11px; opacity: 0.6; }
+.reviews-cta { text-align: center; margin-top: 40px; }
+.reviews-cta a {
+  display: inline-block; background: white; color: var(--blue);
+  padding: 14px 32px; border-radius: 6px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
+  text-decoration: none; transition: transform 0.2s;
 }
-
-.testimonial-arrow:hover { opacity: 1; }
-.arrow-prev { left: 0; }
-.arrow-next { right: 0; }
-
-.testimonial-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
+.reviews-cta a:hover { transform: translateY(-2px); }
+@media (max-width: 850px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-rating { font-size: 52px; }
 }
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  border: 1.5px solid white;
-  background: transparent;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.dot.active { background: white; }
 
 /* ===== CONTACT ===== */
 .section-contact {
@@ -928,45 +886,79 @@ body {
 <span>Kenmore</span>
   </div>
   
-/* ===== TESTIMONIALS ===== */
-.section-testimonials {
-  background: var(--blue);
-  padding: 110px 5% 130px;
-  position: relative;
-  color: white;
-  overflow: hidden;
-}
-.wave-top-down {
-  position: absolute; top: -1px; left: 0; width: 100%; height: 70px;
-  background: white;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,80 L0,30 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 Z' fill='black'/></svg>") no-repeat;
-  mask-size: 100% 100%;
-}
-.wave-bottom {
-  position: absolute; bottom: -1px; left: 0; width: 100%; height: 70px;
-  background: white;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,0 L0,50 C240,0 480,80 720,50 C960,20 1200,70 1440,40 L1440,0 Z' fill='black'/></svg>") no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,0 L0,50 C240,0 480,80 720,50 C960,20 1200,70 1440,40 L1440,0 Z' fill='black'/></svg>") no-repeat;
-  mask-size: 100% 100%;
-}
-.reviews-wrap { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
-.reviews-header { text-align: center; margin-bottom: 48px; }
-.reviews-badge {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.08); padding: 10px 20px;
-  border-radius: 100px; margin-bottom: 22px;
-  font-family: 'Inter', sans-serif; font-size: 12px;
-  font-weight: 500; letter-spacing: 1px;
-}
-.reviews-rating {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 64px; line-height: 1; margin-bottom: 10px;
-}
-.reviews-stars { font-size: 22px; letter-spacing: 5px; color: #FBBC05; margin-bottom: 10px; }
-.reviews-count { font-family: 'Inter', sans-serif; font-size: 14px; opac
+<!-- TESTIMONIALS -->
+<section class="section-testimonials" id="testimonials">
+  <div class="wave-top-down"></div>
+  <div class="reviews-wrap">
+
+    <div class="reviews-header">
+      <div class="reviews-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        <span>GOOGLE REVIEWS</span>
+      </div>
+      <div class="reviews-rating">5.0</div>
+      <div class="reviews-stars">★★★★★</div>
+      <div class="reviews-count">Based on 28 verified reviews</div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellent job on our windows and gutters. Other companies missed spots — Louis cleared it all out. Communication was great. Highly recommend."</p>
+        <div class="review-name">Mira</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Louis went above and beyond on my windows and even fixed second-story vents where birds were nesting. I'll be using him for annual cleanings from now on."</p>
+        <div class="review-name">Laurie Schreiber</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Got the moss off our roof, cleaned gutters packed with greenbelt debris, and got our windows sparkling. Reasonably priced and efficient."</p>
+        <div class="review-name">Scott S.</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We back up to a greenbelt so the debris load is heavy — impressed with both his efficiency and attention to detail. Will be calling again next year."</p>
+        <div class="review-name">Matt Rossow</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Needed windows cleaned Sunday evening for listing photos. Louis accommodated on short notice. Even cleaned screens and got sap off a window."</p>
+        <div class="review-name">Jay Wildin</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Louis always arrives on time and explains thoroughly what work he'll perform. We've used him for windows and gutters — always pleased."</p>
+        <div class="review-name">Diane Panteleakos</div>
+        <div class="review-location">Snohomish County, WA</div>
+      </div>
+
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://www.google.com/search?q=Trinity+Home+Service+Snohomish" target="_blank" rel="noopener">Read all 28 reviews on Google →</a>
+    </div>
+
+  </div>
+  <div class="wave-bottom"></div>
+</section>
 <!-- CONTACT -->
 <section class="section-contact" id="contact">
   <div class="contact-inner">
