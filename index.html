@@ -1105,6 +1105,68 @@ form.addEventListener('submit', async (e) => {
   }
 });
 </script>
+<!-- Sticky mobile CTA bar -->
+<div class="sticky-cta">
+  <a href="tel:4255957758" class="sticky-cta__call">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="#contact" class="sticky-cta__quote">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Free Quote
+  </a>
+</div>
 
+<style>
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+  box-shadow: 0 -4px 16px rgba(43, 47, 168, 0.08);
+}
+.sticky-cta a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  font-family: inherit;
+}
+.sticky-cta a:active { transform: scale(0.97); }
+.sticky-cta__call {
+  background: transparent;
+  border: 2px solid #2b2fa8;
+  color: #2b2fa8;
+}
+.sticky-cta__quote {
+  flex: 1.5;
+  background: #2b2fa8;
+  color: #ffffff;
+  border: 2px solid #2b2fa8;
+}
+.sticky-cta__quote:hover { background: #1f238a; }
+
+/* Push footer up so nothing hides behind the bar */
+footer { padding-bottom: 90px; }
+
+/* Hide on desktop — header already has CTAs */
+@media (min-width: 768px) {
+  .sticky-cta { display: none; }
+  footer { padding-bottom: initial; }
+}
+</style>
 </body>
 </html>
