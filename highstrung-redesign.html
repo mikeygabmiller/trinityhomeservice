@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High-Strung Christmas Lights | Professional Holiday Lighting — Snohomish, WA</title>
+<meta name="description" content="Custom Christmas light installation in Snohomish & King County. We design, supply, hang, maintain, and take down your holiday display — completely hassle-free. Free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0a1429;
+  --night-2:#0f1c3a;
+  --gold:#f5b942;
+  --gold-soft:#ffd980;
+  --evergreen:#1f7a52;
+  --evergreen-dark:#155c3d;
+  --red:#d6453d;
+  --cream:#fbf7ef;
+  --ink:#16203a;
+  --text:#3a4358;
+  --muted:#7a839a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--text);background:var(--cream);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Inter',sans-serif;color:var(--ink);letter-spacing:-.02em}
+.script{font-family:'Mountains of Christmas',cursive;letter-spacing:0}
+a{text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-block;border:none;cursor:pointer;font-family:inherit;font-weight:700;letter-spacing:.02em;border-radius:999px;transition:transform .15s,box-shadow .2s,background .2s}
+.btn-gold{background:var(--gold);color:#3a2a00;padding:16px 34px;font-size:16px;box-shadow:0 10px 26px rgba(245,185,66,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(245,185,66,.5)}
+.btn-green{background:var(--evergreen);color:#fff;padding:16px 34px;font-size:16px}
+.btn-green:hover{background:var(--evergreen-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;padding:14px 30px;font-size:15px}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,20,41,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.brand .bulb{width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{color:#cdd5e6;font-size:14px;font-weight:600;letter-spacing:.03em;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links .btn-gold{padding:11px 24px;font-size:14px;color:#3a2a00}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-toggle span{display:block;width:26px;height:3px;background:#fff;margin:5px 0;border-radius:2px;transition:.3s}
+
+/* ===== Hero ===== */
+.hero{position:relative;background:radial-gradient(120% 90% at 50% -10%,#16264d 0%,var(--night) 55%,#070e1f 100%);color:#fff;text-align:center;padding:96px 24px 110px;overflow:hidden}
+/* twinkling stars */
+.hero::before{content:"";position:absolute;inset:0;background-image:
+  radial-gradient(1.5px 1.5px at 20% 30%,rgba(255,255,255,.7),transparent),
+  radial-gradient(1.5px 1.5px at 70% 20%,rgba(255,255,255,.5),transparent),
+  radial-gradient(2px 2px at 40% 60%,rgba(255,255,255,.6),transparent),
+  radial-gradient(1.5px 1.5px at 85% 55%,rgba(255,255,255,.5),transparent),
+  radial-gradient(2px 2px at 12% 70%,rgba(255,255,255,.5),transparent),
+  radial-gradient(1.5px 1.5px at 60% 80%,rgba(255,255,255,.4),transparent);
+  opacity:.8;animation:twinkleStars 6s ease-in-out infinite alternate}
+@keyframes twinkleStars{from{opacity:.45}to{opacity:.9}}
+
+/* string of lights across top */
+.lights{position:absolute;top:0;left:0;width:100%;height:60px;display:flex;justify-content:space-around;align-items:flex-start;z-index:2}
+.lights .light{width:12px;height:12px;border-radius:50%;margin-top:18px;position:relative;animation:glow 1.8s ease-in-out infinite}
+.lights .light::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:2px;height:10px;background:rgba(255,255,255,.25)}
+.lights .light:nth-child(5n+1){background:var(--gold);box-shadow:0 0 12px var(--gold);animation-delay:0s}
+.lights .light:nth-child(5n+2){background:var(--red);box-shadow:0 0 12px var(--red);animation-delay:.3s}
+.lights .light:nth-child(5n+3){background:#5bc0eb;box-shadow:0 0 12px #5bc0eb;animation-delay:.6s}
+.lights .light:nth-child(5n+4){background:var(--evergreen);box-shadow:0 0 12px var(--evergreen);animation-delay:.9s}
+.lights .light:nth-child(5n+5){background:#fff;box-shadow:0 0 12px #fff;animation-delay:1.2s}
+@keyframes glow{0%,100%{opacity:.4;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+
+.hero-content{position:relative;z-index:3;max-width:780px;margin:0 auto}
+.hero-eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);background:rgba(245,185,66,.12);border:1px solid rgba(245,185,66,.3);padding:8px 18px;border-radius:999px;margin-bottom:26px}
+.hero h1{color:#fff;font-size:clamp(40px,6.5vw,72px);line-height:1.04;font-weight:800;margin-bottom:22px}
+.hero h1 .glowtext{color:var(--gold);text-shadow:0 0 26px rgba(245,185,66,.55)}
+.hero p.lead{font-size:clamp(17px,2.4vw,20px);color:#cdd5e6;max-width:620px;margin:0 auto 36px}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.hero-trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:14px;color:#aeb8cf}
+.hero-trust span{display:flex;align-items:center;gap:8px}
+.hero-trust .chk{color:var(--gold)}
+
+/* countdown */
+.countdown{position:relative;z-index:3;margin:48px auto 0;max-width:520px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px 18px}
+.countdown .cd-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+.cd-grid{display:flex;justify-content:center;gap:14px}
+.cd-cell{min-width:64px}
+.cd-num{font-size:34px;font-weight:800;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.cd-unit{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9fa9c2;margin-top:6px}
+.cd-note{margin-top:14px;font-size:13px;color:#cdd5e6}
+.cd-note b{color:var(--gold-soft)}
+
+/* ===== Section base ===== */
+.section{padding:90px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--evergreen);margin-bottom:14px}
+.section-head h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:14px}
+.section-head p{font-size:17px;color:var(--muted)}
+
+/* ===== Steps ===== */
+.steps-bg{background:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step{text-align:center;padding:14px}
+.step .num{width:54px;height:54px;border-radius:50%;background:var(--night);color:var(--gold);font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 20px rgba(10,20,41,.18)}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* ===== Services ===== */
+.services-bg{background:var(--cream)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:#fff;border:1px solid #ece6da;border-radius:16px;padding:30px 26px;transition:transform .22s,box-shadow .22s,border-color .22s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(16,32,58,.12);border-color:transparent}
+.svc .ico{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;background:rgba(31,122,82,.1);color:var(--evergreen)}
+.svc.feature .ico{background:rgba(245,185,66,.18);color:#b07d12}
+.svc h3{font-size:20px;margin-bottom:10px}
+.svc p{font-size:15px;color:var(--muted)}
+.svc .tag{display:inline-block;margin-bottom:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b07d12;background:rgba(245,185,66,.15);padding:5px 12px;border-radius:999px}
+
+/* ===== Why us / value ===== */
+.why-bg{background:var(--night);color:#fff;position:relative;overflow:hidden}
+.why-bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(2px 2px at 30% 20%,rgba(255,255,255,.4),transparent),radial-gradient(2px 2px at 75% 65%,rgba(255,255,255,.3),transparent);opacity:.5}
+.why-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why h2{color:#fff}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px}
+.why-card h3{color:#fff;font-size:19px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.why-card h3 .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+.why-card p{color:#b6c0d8;font-size:14.5px}
+
+/* compare table */
+.compare{position:relative;z-index:2;margin-top:46px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
+.compare .row{display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center}
+.compare .row:not(:last-child){border-bottom:1px solid rgba(255,255,255,.08)}
+.compare .row>div{padding:16px 20px;font-size:14.5px}
+.compare .head{background:rgba(255,255,255,.06);font-weight:700;color:#fff}
+.compare .feat{color:#cdd5e6}
+.compare .us{color:#fff;font-weight:600;text-align:center;background:rgba(245,185,66,.08)}
+.compare .them{color:#8c97b0;text-align:center}
+.compare .yes{color:var(--gold)}
+.compare .no{color:#67718c}
+
+/* ===== Service area ===== */
+.area-bg{background:#fff}
+.pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto}
+.pill{background:var(--cream);border:1.5px solid #ece6da;color:var(--ink);font-weight:600;font-size:15px;padding:11px 20px;border-radius:999px;transition:.2s}
+.pill:hover{background:var(--evergreen);color:#fff;border-color:var(--evergreen);transform:translateY(-2px)}
+.area-note{text-align:center;color:var(--muted);margin-top:22px;font-size:15px}
+
+/* ===== Reviews ===== */
+.rev-bg{background:var(--cream)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid #ece6da;border-radius:16px;padding:28px}
+.rev .stars{color:var(--gold);letter-spacing:3px;margin-bottom:14px}
+.rev p{font-size:15px;color:var(--text);font-style:italic;margin-bottom:16px}
+.rev .who{font-weight:700;color:var(--ink);font-size:14px}
+.rev .loc{font-size:13px;color:var(--muted)}
+
+/* ===== CTA / Quote ===== */
+.quote-bg{background:radial-gradient(120% 120% at 50% 0%,#16264d,var(--night));color:#fff;position:relative;overflow:hidden}
+.quote-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.quote-left h2{color:#fff;font-size:clamp(30px,4.5vw,42px);margin-bottom:16px}
+.quote-left p{color:#cdd5e6;font-size:16px;margin-bottom:26px;max-width:440px}
+.quote-contact a{display:flex;align-items:center;gap:12px;color:#fff;font-weight:600;font-size:17px;margin-bottom:14px}
+.quote-contact .ic{color:var(--gold)}
+.qbadge{display:inline-block;margin-top:8px;font-size:13px;color:#9fa9c2}
+.form{background:#fff;border-radius:20px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.form h3{font-size:22px;margin-bottom:6px}
+.form .sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.fg input,.fg select{width:100%;border:1.5px solid #e2ddd2;border-radius:10px;padding:12px 14px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff;transition:border-color .2s}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--evergreen)}
+.form .btn-green{width:100%;margin-top:6px}
+.form .fine{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+
+/* ===== Footer ===== */
+.footer{background:#070e1f;color:#aeb8cf;padding:50px 24px 110px;text-align:center}
+.footer .brand{justify-content:center;margin-bottom:14px}
+.footer p{font-size:14px;margin:4px 0}
+.footer a{color:var(--gold-soft)}
+
+/* ===== Sticky mobile CTA ===== */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:200;display:none;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e7e1d6;box-shadow:0 -6px 20px rgba(10,20,41,.12)}
+.sticky-cta a{flex:1;text-align:center;padding:14px;border-radius:999px;font-weight:700;font-size:15px}
+.sticky-cta .call{border:2px solid var(--evergreen);color:var(--evergreen)}
+.sticky-cta .quote{flex:1.4;background:var(--evergreen);color:#fff}
+
+/* ===== Responsive ===== */
+@media(max-width:920px){
+  .steps,.svc-grid,.why-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .quote-inner{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:680px){
+  .nav-links{position:fixed;top:70px;right:0;width:min(280px,80%);height:calc(100vh - 70px);background:var(--night-2);flex-direction:column;align-items:flex-start;padding:28px;gap:22px;transform:translateX(110%);transition:transform .3s;border-left:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .steps,.svc-grid,.why-grid,.rev-grid{grid-template-columns:1fr}
+  .compare .row{grid-template-columns:1.4fr .8fr .8fr}
+  .compare .row>div{padding:12px 12px;font-size:13px}
+  .sticky-cta{display:flex}
+  .section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand"><span class="bulb"></span> High-Strung Christmas Lights</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#quote" class="btn btn-gold">Free Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="lights">
+    <!-- 24 bulbs -->
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+    <span class="light"></span><span class="light"></span><span class="light"></span><span class="light"></span>
+  </div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Snohomish &amp; King County · Since 2012</span>
+    <h1>Your home, <span class="glowtext">glowing</span> for the holidays —<br>without the ladder.</h1>
+    <p class="lead">We design, supply, install, maintain, and take down your custom Christmas light display. You just turn it on and enjoy. Fully insured, professional-grade lights.</p>
+    <div class="hero-cta">
+      <a href="#quote" class="btn btn-gold">Get My Free Quote</a>
+      <a href="tel:4253219772" class="btn btn-ghost">📞 (425) 321-9772</a>
+    </div>
+    <div class="hero-trust">
+      <span><span class="chk">✓</span> Free design consultation</span>
+      <span><span class="chk">✓</span> Lights &amp; install included</span>
+      <span><span class="chk">✓</span> We store them in the off-season</span>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-label">⏳ Countdown to Christmas</div>
+      <div class="cd-grid">
+        <div class="cd-cell"><div class="cd-num" id="cd-days">--</div><div class="cd-unit">Days</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-hours">--</div><div class="cd-unit">Hours</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-mins">--</div><div class="cd-unit">Minutes</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cd-secs">--</div><div class="cd-unit">Seconds</div></div>
+      </div>
+      <div class="cd-note" id="cd-note">Calendars fill up fast — <b>book early to lock your install date.</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- HOW IT WORKS -->
+<section class="section steps-bg" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Completely Hassle-Free</div>
+      <h2>Four steps. Zero ladders.</h2>
+      <p>From the first idea to the January take-down, we handle every part of it.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Design</h3><p>We walk your property, plan the look, and send a clear, no-pressure quote.</p></div>
+      <div class="step"><div class="num">2</div><h3>Install</h3><p>Our insured crew hangs commercial-grade lights — perfectly spaced and secured.</p></div>
+      <div class="step"><div class="num">3</div><h3>Maintain</h3><p>A bulb out? We fix it fast, all season long, at no extra charge.</p></div>
+      <div class="step"><div class="num">4</div><h3>Take Down &amp; Store</h3><p>In January we remove everything and store your lights until next year.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Do</div>
+      <h2>More than just Christmas lights</h2>
+      <p>Year-round curb appeal for your home or business.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc feature">
+        <span class="tag">Most Popular</span>
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Residential Holiday Lighting</h3>
+        <p>Custom rooflines, trees, wreaths, and walkways. We supply the lights, install, maintain, and remove — all included.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 18v3M17 18v3M3 9h18"/></svg>
+        </div>
+        <h3>Commercial Displays</h3>
+        <p>Make your storefront or office shine. Reliable, professional installs that draw customers all season long.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M5 8l1.5 1.5M19 8l-1.5 1.5"/><path d="M4 14h16l-2 7H6z"/><circle cx="12" cy="11" r="3"/></svg>
+        </div>
+        <h3>Landscape Lighting</h3>
+        <p>Year-round path, tree, and accent lighting that adds warmth, safety, and value to your property.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M3 16h18"/></svg>
+        </div>
+        <h3>Roof &amp; Gutter Cleaning</h3>
+        <p>Already on your roof for lights? Add a clean-out and keep your home protected through the wet season.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+        </div>
+        <h3>Season-Long Service Plan</h3>
+        <p>Every install includes free maintenance. If anything goes out, one call and we make it right.</p>
+      </div>
+      <div class="svc">
+        <div class="ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V5a2 2 0 0 1 2-2h0M3 13h18"/></svg>
+        </div>
+        <h3>Off-Season Storage</h3>
+        <p>No bins in your garage. We label, box, and store your lights so they're ready to go next December.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US + COMPARE -->
+<section class="section why-bg why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" style="color:var(--gold-soft)">The High-Strung Difference</div>
+      <h2>Why neighbors hand us the ladder</h2>
+      <p style="color:#9fa9c2">Anyone can hang lights once. We do it right, keep it lit, and take it all away.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><h3><span class="dot"></span> Fully Insured Crew</h3><p>Professionals on the roof — not you, not a teenager. We carry full liability insurance for your peace of mind.</p></div>
+      <div class="why-card"><h3><span class="dot"></span> Pro-Grade Lights</h3><p>Commercial LED bulbs that are brighter, more even, and last for years — a world apart from big-box strands.</p></div>
+      <div class="why-card"><h3><span class="dot"></span> Truly All-Inclusive</h3><p>Design, lights, install, maintenance, take-down, and storage. One price, zero surprises, nothing left for you to do.</p></div>
+    </div>
+
+    <div class="compare">
+      <div class="row head"><div>What you get</div><div class="us">High-Strung</div><div class="them">Doing it yourself</div></div>
+      <div class="row"><div class="feat">No climbing ladders in the cold</div><div class="us yes">✓</div><div class="them no">✕</div></div>
+      <div class="row"><div class="feat">Commercial-grade lights included</div><div class="us yes">✓</div><div class="them no">✕</div></div>
+      <div class="row"><div class="feat">Free repairs all season</div><div class="us yes">✓</div><div class="them no">✕</div></div>
+      <div class="row"><div class="feat">Take-down &amp; storage handled</div><div class="us yes">✓</div><div class="them no">✕</div></div>
+      <div class="row"><div class="feat">Fully insured</div><div class="us yes">✓</div><div class="them no">✕</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="section area-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Proudly Local</div>
+      <h2>Areas We Serve</h2>
+      <p>Based in Snohomish — brightening homes across Snohomish &amp; King County.</p>
+    </div>
+    <div class="pills">
+      <span class="pill">Snohomish</span><span class="pill">Monroe</span><span class="pill">Everett</span>
+      <span class="pill">Mill Creek</span><span class="pill">Bothell</span><span class="pill">Kirkland</span>
+      <span class="pill">Redmond</span><span class="pill">Bellevue</span><span class="pill">Snoqualmie</span>
+      <span class="pill">Issaquah Highlands</span>
+    </div>
+    <p class="area-note">Not sure if we reach you? <a href="#quote" style="color:var(--evergreen);font-weight:600;">Just ask</a> — we're always adding neighborhoods.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section rev-bg" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">★★★★★ Loved by Locals</div>
+      <h2>What our neighbors say</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>"Our house has never looked better. They designed it, installed everything, and took it down in January — we didn't lift a finger."</p><div class="who">The Hendersons</div><div class="loc">Mill Creek, WA</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"A bulb went out mid-December and they came back the next day, no charge. That's the service that keeps us renewing every year."</p><div class="who">Dana R.</div><div class="loc">Snohomish, WA</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Professional, insured, and the lights are far nicer than anything I could buy myself. Our storefront gets compliments daily."</p><div class="who">Cedar &amp; Co. Boutique</div><div class="loc">Monroe, WA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section quote-bg" id="quote">
+  <div class="wrap quote-inner">
+    <div class="quote-left">
+      <div class="kicker" style="color:var(--gold-soft)">Free, No-Pressure Quote</div>
+      <h2>Let's light up your place</h2>
+      <p>Tell us a little about your home or business and we'll follow up with a custom design and quote — usually within 24 hours.</p>
+      <div class="quote-contact">
+        <a href="tel:4253219772"><span class="ic">📞</span> (425) 321-9772</a>
+        <a href="mailto:hello@highstrungchristmaslights.com"><span class="ic">✉️</span> hello@highstrungchristmaslights.com</a>
+      </div>
+      <span class="qbadge">Serving Snohomish &amp; King County · Fully insured · Booking now for this season</span>
+    </div>
+
+    <form class="form" id="quoteForm" onsubmit="return false;">
+      <h3>Request your free quote</h3>
+      <div class="sub">No obligation. We'll never share your info.</div>
+      <div class="fg"><label for="name">Name</label><input id="name" type="text" required></div>
+      <div class="fg"><label for="phone">Phone</label><input id="phone" type="tel" required></div>
+      <div class="fg"><label for="email">Email</label><input id="email" type="email"></div>
+      <div class="fg"><label for="type">Property type</label>
+        <select id="type">
+          <option>Residential home</option>
+          <option>Commercial / storefront</option>
+          <option>Landscape lighting</option>
+          <option>Roof &amp; gutter cleaning</option>
+        </select>
+      </div>
+      <div class="fg"><label for="addr">Address or city</label><input id="addr" type="text"></div>
+      <button class="btn btn-green" type="submit">Send My Free Quote Request</button>
+      <div class="fine">Or call us directly at (425) 321-9772</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="brand"><span class="bulb"></span> High-Strung Christmas Lights</div>
+  <p>Professional holiday &amp; landscape lighting · Snohomish, WA</p>
+  <p><a href="tel:4253219772">(425) 321-9772</a> · Serving Snohomish &amp; King County</p>
+  <p style="opacity:.6;margin-top:12px;">© <span id="yr"></span> High-Strung Christmas Lights. All rights reserved.</p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="tel:4253219772" class="call">📞 Call</a>
+  <a href="#quote" class="quote">Get Free Quote</a>
+</div>
+
+<script>
+// nav toggle
+var mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+mt.addEventListener('click',function(){nl.classList.toggle('open');});
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');});});
+
+// year
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// Christmas countdown
+(function(){
+  var d=document.getElementById('cd-days'),h=document.getElementById('cd-hours'),
+      m=document.getElementById('cd-mins'),s=document.getElementById('cd-secs'),
+      note=document.getElementById('cd-note');
+  function tick(){
+    var now=new Date();
+    var year=now.getFullYear();
+    var xmas=new Date(year,11,25,0,0,0); // Dec 25
+    if(now>xmas){ // past Christmas this year
+      var dayAfter=new Date(year,11,26);
+      if(now<dayAfter){ // it's Christmas Day
+        d.textContent='0';h.textContent='0';m.textContent='0';s.textContent='0';
+        note.innerHTML='🎄 <b>Merry Christmas!</b> Hope your display looks amazing.';
+        return;
+      }
+      xmas=new Date(year+1,11,25,0,0,0);
+    }
+    var diff=xmas-now;
+    var days=Math.floor(diff/86400000);
+    var hrs=Math.floor(diff%86400000/3600000);
+    var mins=Math.floor(diff%3600000/60000);
+    var secs=Math.floor(diff%60000/1000);
+    d.textContent=days;h.textContent=hrs;m.textContent=mins;s.textContent=secs;
+  }
+  tick();setInterval(tick,1000);
+})();
+
+// demo form (mockup only)
+document.getElementById('quoteForm').addEventListener('submit',function(){
+  alert("Thanks! In the live version this sends straight to High-Strung's inbox. (This is a demo mockup.)");
+});
+</script>
+</body>
+</html>
