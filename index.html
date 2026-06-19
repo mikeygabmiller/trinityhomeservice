@@ -1066,6 +1066,16 @@ form.addEventListener('submit', async (e) => {
     status.className = 'form-status error';
   }
 });
+
+// Lightweight, privacy-friendly page-view counter.
+// No cookies, no personal data — just a shared tally. Fire-and-forget so it
+// can never block or break the page. View the total at /stats.html
+(function () {
+  try {
+    fetch('https://abacus.jasoncameron.dev/hit/trinity-exterior-cleaning-9f4a2x/home')
+      .catch(function () {});
+  } catch (e) { /* counter is non-essential — ignore any failure */ }
+})();
 </script>
 <!-- Sticky mobile CTA bar -->
 <div class="sticky-cta">
