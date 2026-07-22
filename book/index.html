@@ -206,6 +206,46 @@ h2.h-section{
 .form-success p{font-size:15px;color:var(--muted);margin-bottom:8px}
 .form-success .sc-call{display:inline-block;margin-top:8px;font-weight:800;color:var(--blue);font-size:20px;text-decoration:none}
 
+/* ---------- owner intro (trust / conversion) ---------- */
+.owner-intro{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;padding:12px 16px;margin-bottom:26px;max-width:520px;
+}
+.owner-intro img{
+  flex:0 0 auto;width:64px;height:64px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--accent);
+}
+.owner-intro .oi-text{line-height:1.35}
+.owner-intro .oi-text strong{display:block;color:#fff;font-size:15px;font-weight:800}
+.owner-intro .oi-text span{font-size:13.5px;color:rgba(255,255,255,.85)}
+/* owner row inside the form card */
+.form-owner{display:flex;align-items:center;gap:11px;justify-content:center;margin-bottom:6px}
+.form-owner img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+.form-owner .fo-name{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2;text-align:left}
+.form-owner .fo-name span{display:block;font-size:11.5px;font-weight:600;color:var(--muted)}
+
+/* ---------- clickable service checkmarks ---------- */
+.svc-picker{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.svc-opt{position:relative}
+.svc-opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.svc-opt label{
+  display:flex;align-items:center;gap:10px;height:100%;
+  border:1.5px solid var(--line);border-radius:11px;padding:12px 12px;
+  font-size:14.5px;font-weight:600;color:var(--ink);background:var(--bg-soft);
+  cursor:pointer;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease;
+}
+.svc-opt .box{
+  flex:0 0 auto;width:22px;height:22px;border-radius:7px;border:2px solid #c3c9db;background:#fff;
+  display:flex;align-items:center;justify-content:center;transition:all .15s ease;
+}
+.svc-opt .box svg{width:14px;height:14px;color:#fff;opacity:0;transform:scale(.5);transition:all .15s ease}
+.svc-opt input:checked + label{border-color:var(--blue);background:#eef1fb;box-shadow:0 0 0 3px rgba(46,62,176,.12)}
+.svc-opt input:checked + label .box{background:var(--blue);border-color:var(--blue)}
+.svc-opt input:checked + label .box svg{opacity:1;transform:scale(1)}
+.svc-opt input:focus-visible + label{border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,62,176,.18)}
+.svc-full{grid-column:1 / -1}
+
 /* ---------- trust bar ---------- */
 .trustbar{background:var(--bg-soft);border-bottom:1px solid var(--line)}
 .trustbar-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 24px;max-width:1200px;margin:0 auto}
@@ -338,6 +378,8 @@ section.pad{padding:74px 0}
   .sticky-cta{display:flex}
   body{padding-bottom:78px}
   .hero-actions .btn-cta{width:100%}
+  .svc-picker{grid-template-columns:1fr}
+  .owner-intro{max-width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
@@ -377,6 +419,13 @@ section.pad{padding:74px 0}
         <span class="stars">★★★★★</span>
         <span class="rr"><strong>5.0</strong> from <strong>28</strong> verified Google reviews</span>
       </div>
+      <div class="owner-intro">
+        <img src="/images/owner.jpg" alt="Louis, owner of Trinity Exterior Cleaning" width="64" height="64" loading="eager">
+        <div class="oi-text">
+          <strong>Hi, I'm Louis — the owner.</strong>
+          <span>You deal with me directly. I'll personally handle your quote &amp; the work.</span>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="#quote" class="btn btn-cta">Get My Free Quote</a>
         <a href="tel:4255957758" class="hero-call" data-call>
@@ -389,6 +438,10 @@ section.pad{padding:74px 0}
     <!-- LEAD FORM (single conversion goal, above the fold) -->
     <div class="form-card" id="quote">
       <form id="quoteForm" action="https://formsubmit.co/louisroymiller@gmail.com" method="POST" novalidate>
+        <div class="form-owner">
+          <img src="/images/owner.jpg" alt="Louis, owner of Trinity Exterior Cleaning" width="44" height="44" loading="eager">
+          <div class="fo-name">Louis, Owner<span>Replies within 24 hours</span></div>
+        </div>
         <h2>Get Your Free Quote</h2>
         <p class="fc-sub">Takes 60 seconds. No obligation, no pressure.</p>
 
@@ -407,19 +460,29 @@ section.pad{padding:74px 0}
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
         </div>
         <div class="field">
-          <label for="address">Property address</label>
-          <input type="text" id="address" name="address" autocomplete="street-address" required>
-        </div>
-        <div class="field">
-          <label for="service">What needs cleaning?</label>
-          <select id="service" name="service">
-            <option value="Window Cleaning">Window Cleaning</option>
-            <option value="Gutter Cleaning">Gutter Cleaning</option>
-            <option value="Roof Cleaning (Soft Wash)">Roof Cleaning (Soft Wash)</option>
-            <option value="Pressure Washing">Pressure Washing</option>
-            <option value="Multiple Services" selected>Multiple Services</option>
-            <option value="Not sure — recommend for me">Not sure — recommend for me</option>
-          </select>
+          <label>What needs cleaning? <span style="font-weight:500;color:var(--muted)">(tap all that apply)</span></label>
+          <div class="svc-picker" id="svcPicker">
+            <div class="svc-opt">
+              <input type="checkbox" id="s-window" name="Services" value="Window Cleaning">
+              <label for="s-window"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Window Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-gutter" name="Services" value="Gutter Cleaning">
+              <label for="s-gutter"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Gutter Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-roof" name="Services" value="Roof Cleaning (Soft Wash)">
+              <label for="s-roof"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Roof Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-pressure" name="Services" value="Pressure Washing">
+              <label for="s-pressure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pressure Washing</label>
+            </div>
+            <div class="svc-opt svc-full">
+              <input type="checkbox" id="s-notsure" name="Services" value="Not sure — recommend for me">
+              <label for="s-notsure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure — recommend for me</label>
+            </div>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-cta btn-full btn-lg">Get My Free Quote →</button>
@@ -737,6 +800,15 @@ document.querySelectorAll('[data-call]').forEach(function(el){
         status.className='form-status error';
         return;
       }
+    }
+
+    // require at least one service selected
+    if(!form.querySelector('input[name="Services"]:checked')){
+      status.textContent='Please tap the service(s) you need.';
+      status.className='form-status error';
+      var picker=document.getElementById('svcPicker');
+      if(picker) picker.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
     }
 
     var btn=form.querySelector('button[type="submit"]');
