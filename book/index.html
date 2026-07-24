@@ -421,6 +421,31 @@ section.pad{padding:74px 0}
           <label for="phone">Phone number</label>
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
         </div>
+        <div class="field">
+          <label>What needs cleaning? <span style="font-weight:500;color:var(--muted)">(optional — tap all that apply)</span></label>
+          <div class="svc-picker" id="svcPicker">
+            <div class="svc-opt">
+              <input type="checkbox" id="s-window" name="Services" value="Window Cleaning">
+              <label for="s-window"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Window Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-gutter" name="Services" value="Gutter Cleaning">
+              <label for="s-gutter"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Gutter Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-roof" name="Services" value="Roof Cleaning (Soft Wash)">
+              <label for="s-roof"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Roof Cleaning</label>
+            </div>
+            <div class="svc-opt">
+              <input type="checkbox" id="s-pressure" name="Services" value="Pressure Washing">
+              <label for="s-pressure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pressure Washing</label>
+            </div>
+            <div class="svc-opt svc-full">
+              <input type="checkbox" id="s-notsure" name="Services" value="Not sure — recommend for me">
+              <label for="s-notsure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure — recommend for me</label>
+            </div>
+          </div>
+        </div>
 
         <button type="submit" class="btn btn-cta btn-full btn-lg">Get My Free Quote →</button>
         <div class="form-fine">
