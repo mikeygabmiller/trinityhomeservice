@@ -172,6 +172,17 @@ h2.h-section{
 .hero-call span{font-size:12px;color:rgba(255,255,255,.7);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
 .hero-call strong{font-size:22px;font-weight:800}
 
+/* centered, form-first hero */
+.hero-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 24px;text-align:center}
+.hero-inner .hero-badge{margin-bottom:20px}
+.hero-inner h1{margin-bottom:16px}
+.hero-inner .hero-lead{margin:0 auto 28px;max-width:600px}
+.hero-inner .hero-lead strong{color:#fff}
+.hero-inner .form-card{max-width:480px;margin:0 auto;text-align:left}
+.hero-orcall{margin-top:22px;font-size:15px;color:rgba(255,255,255,.9)}
+.hero-orcall a{color:#fff;font-weight:800;text-decoration:none;white-space:nowrap;border-bottom:2px solid rgba(255,180,0,.7)}
+.hero-orcall a:hover{border-bottom-color:var(--accent)}
+
 /* ---------- lead form card ---------- */
 .form-card{
   background:#fff;border-radius:20px;box-shadow:var(--shadow);color:var(--text);
@@ -385,34 +396,16 @@ section.pad{padding:74px 0}
 
 <!-- ========================= HERO ========================= -->
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <span class="hero-badge">★ Rated 5.0 on Google · Snohomish County</span>
-      <h1>Spotless Windows, Gutters &amp; Roofs,  <span class="hl">Guaranteed.</span></h1>
-      <p class="hero-lead"> Snohomish County's 5-star exterior cleaning crew. Streak-free results, on-time service, and a free quote back in under 24 hours.</p>
-      <ul class="hero-points">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Windows, gutters, roof soft-washing &amp; pressure washing</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Licensed, bonded &amp; insured — you're fully covered</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 100% satisfaction guarantee on every job</li>
-      </ul>
-      <div class="hero-rating">
-        <span class="stars">★★★★★</span>
-        <span class="rr"><strong>5.0</strong> from <strong>28</strong> verified Google reviews</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#quote" class="btn btn-cta">Get My Free Quote</a>
-        <a href="tel:4255957758" class="hero-call" data-call>
-          <span>Or call / text</span>
-          <strong>425-595-7758</strong>
-        </a>
-      </div>
-    </div>
+  <div class="hero-inner">
+    <span class="hero-badge">★★★★★&nbsp;&nbsp;Rated 5.0 on Google · Snohomish County</span>
+    <h1>The Cleanest Your Home Has Looked in Years — <span class="hl">Guaranteed.</span></h1>
+    <p class="hero-lead">Join <strong>28 Snohomish County homeowners</strong> who rated us a perfect 5.0 on Google. Licensed, bonded &amp; insured — and your free, no-obligation quote comes back in under 24&nbsp;hours.</p>
 
     <!-- LEAD FORM (single conversion goal, above the fold) -->
     <div class="form-card" id="quote">
       <form id="quoteForm" action="https://formsubmit.co/louisroymiller@gmail.com" method="POST" novalidate>
         <h2>Get Your Free Quote</h2>
-        <p class="fc-sub">Takes 60 seconds. No obligation, no pressure.</p>
+        <p class="fc-sub">Just your name and number — we'll call you right back.</p>
 
         <input type="hidden" name="_subject" value="New Quote Request — Google Ads Landing Page (/book)">
         <input type="hidden" name="_captcha" value="false">
@@ -427,31 +420,6 @@ section.pad{padding:74px 0}
         <div class="field">
           <label for="phone">Phone number</label>
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
-        </div>
-        <div class="field">
-          <label>What needs cleaning? <span style="font-weight:500;color:var(--muted)">(tap all that apply)</span></label>
-          <div class="svc-picker" id="svcPicker">
-            <div class="svc-opt">
-              <input type="checkbox" id="s-window" name="Services" value="Window Cleaning">
-              <label for="s-window"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Window Cleaning</label>
-            </div>
-            <div class="svc-opt">
-              <input type="checkbox" id="s-gutter" name="Services" value="Gutter Cleaning">
-              <label for="s-gutter"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Gutter Cleaning</label>
-            </div>
-            <div class="svc-opt">
-              <input type="checkbox" id="s-roof" name="Services" value="Roof Cleaning (Soft Wash)">
-              <label for="s-roof"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Roof Cleaning</label>
-            </div>
-            <div class="svc-opt">
-              <input type="checkbox" id="s-pressure" name="Services" value="Pressure Washing">
-              <label for="s-pressure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pressure Washing</label>
-            </div>
-            <div class="svc-opt svc-full">
-              <input type="checkbox" id="s-notsure" name="Services" value="Not sure — recommend for me">
-              <label for="s-notsure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure — recommend for me</label>
-            </div>
-          </div>
         </div>
 
         <button type="submit" class="btn btn-cta btn-full btn-lg">Get My Free Quote →</button>
@@ -470,6 +438,8 @@ section.pad{padding:74px 0}
         <a href="tel:4255957758" class="sc-call" data-call>425-595-7758</a>
       </div>
     </div>
+
+    <p class="hero-orcall">Prefer to talk now? <a href="tel:4255957758" data-call>Call or text 425-595-7758</a></p>
   </div>
 </section>
 
@@ -769,15 +739,6 @@ document.querySelectorAll('[data-call]').forEach(function(el){
         status.className='form-status error';
         return;
       }
-    }
-
-    // require at least one service selected
-    if(!form.querySelector('input[name="Services"]:checked')){
-      status.textContent='Please tap the service(s) you need.';
-      status.className='form-status error';
-      var picker=document.getElementById('svcPicker');
-      if(picker) picker.scrollIntoView({behavior:'smooth',block:'center'});
-      return;
     }
 
     var btn=form.querySelector('button[type="submit"]');
