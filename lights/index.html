@@ -141,7 +141,7 @@ h2.h-section{
 .hero{
   position:relative;overflow:hidden;color:#fff;
   background:linear-gradient(157deg,#2c3aa8 0%,#232f8a 52%,#1a2360 100%);
-  padding:56px 0 64px;
+  padding:42px 0 60px;
 }
 .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
 .hero::before{width:520px;height:520px;top:-220px;right:-160px;background:radial-gradient(circle,rgba(255,255,255,.10),transparent 70%)}
@@ -150,15 +150,21 @@ h2.h-section{
   position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
   max-width:1200px;margin:0 auto;padding:0 24px;
 }
+.hero-kicker{
+  font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--accent);margin-bottom:10px;
+}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.2);padding:8px 15px;border-radius:100px;
   font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;
 }
 .hero h1{
-  color:#fff;font-size:clamp(34px,5vw,56px);font-weight:900;letter-spacing:-.025em;margin-bottom:18px;
+  color:#fff;font-size:clamp(30px,3.5vw,43px);font-weight:900;letter-spacing:-.025em;margin-bottom:18px;
 }
-.hero h1 .hl{color:var(--accent)}
+.hero h1 .hl{color:var(--accent);white-space:nowrap}
+.h1-br{display:none}
+@media(min-width:800px){.h1-br{display:inline}}
 .hero-lead{font-size:clamp(16px,1.9vw,19px);color:rgba(255,255,255,.9);max-width:540px;margin-bottom:26px}
 .hero-points{list-style:none;display:grid;gap:12px;margin-bottom:28px;max-width:520px}
 .hero-points li{display:flex;align-items:flex-start;gap:11px;font-size:15.5px;color:rgba(255,255,255,.95);font-weight:500}
@@ -173,10 +179,10 @@ h2.h-section{
 .hero-call strong{font-size:22px;font-weight:800}
 
 /* centered, form-first hero */
-.hero-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 24px;text-align:center}
+.hero-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:0 24px;text-align:center}
 .hero-inner .hero-badge{margin-bottom:20px}
 .hero-inner h1{margin-bottom:16px}
-.hero-inner .hero-lead{margin:0 auto 28px;max-width:600px}
+.hero-inner .hero-lead{margin:0 auto 20px;max-width:600px}
 .hero-inner .hero-lead strong{color:#fff}
 .hero-inner .form-card{max-width:480px;margin:0 auto;text-align:left}
 .hero-orcall{margin-top:22px;font-size:15px;color:rgba(255,255,255,.9)}
@@ -194,7 +200,8 @@ h2.h-section{
   padding:7px 16px;border-radius:100px;white-space:nowrap;box-shadow:0 6px 16px rgba(245,158,11,.4);
 }
 .form-card h2{font-size:23px;font-weight:800;color:var(--ink);text-align:center;margin:4px 0 3px}
-.form-card .fc-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:16px}
+.form-card .fc-sub{text-align:center;font-size:13.5px;line-height:1.45;color:var(--muted);margin-bottom:14px}
+.form-card .fc-stars{color:var(--star);letter-spacing:1px}
 .field{margin-bottom:12px}
 .field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:5px}
 .field input,.field select{
@@ -386,7 +393,8 @@ section.pad{padding:74px 0}
   .logo-text{font-size:18px}
   .hero{padding:20px 0 42px}
   .hero-badge{margin-bottom:13px;font-size:11.5px;padding:7px 12px}
-  .hero-inner h1{font-size:31px;margin-bottom:12px}
+  .hero-inner h1{font-size:29px;margin-bottom:12px}
+  .hero-kicker{font-size:11.5px;letter-spacing:.14em;margin-bottom:8px}
   .hero-lead{margin-bottom:20px;font-size:15.5px}
   .form-card{padding:22px 16px 20px}
   .svc-grid{grid-template-columns:1fr}
@@ -429,15 +437,15 @@ section.pad{padding:74px 0}
 <!-- ========================= HERO ========================= -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-badge">★★★★★&nbsp;&nbsp;Rated 5.0 on Google</span>
-    <h1>The <span class="hl">Brightest</span> House on the Block.</h1>
-    <p class="hero-lead"><strong>We hang them, we take them down.</strong> You never touch a ladder. Free quote in 24&nbsp;hours.</p>
+    <p class="hero-kicker">Christmas Light Installation &middot; Snohomish County</p>
+    <h1>Holiday Lights, <span class="hl">Start to Finish</span>.<br class="h1-br"> You Don't Even Flip a Switch.</h1>
+    <p class="hero-lead"><strong>We design it, hang it, then take it down in January.</strong> You never touch a ladder. Free quote in 24&nbsp;hours.</p>
 
     <!-- LEAD FORM (single conversion goal, above the fold) -->
     <div class="form-card" id="quote">
       <form id="quoteForm" action="https://formsubmit.co/louisroymiller@gmail.com" method="POST" novalidate>
         <h2>Get Your Free Quote</h2>
-        <p class="fc-sub">60 seconds. We'll call you right back.</p>
+        <p class="fc-sub"><span class="fc-stars">★★★★★</span> Rated 5.0 on Google &middot; 28 reviews<br>60 seconds, and we'll call you right back.</p>
 
         <input type="hidden" name="_subject" value="New Holiday Lighting Request — Landing Page (/lights)">
         <input type="hidden" name="_captcha" value="false">
@@ -486,7 +494,7 @@ section.pad{padding:74px 0}
       <div class="form-success" id="formSuccess">
         <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
         <h3>Request received — thank you!</h3>
-        <p>Louis will personally reach out within 24 hours with your free, no-obligation lighting quote.</p>
+        <p>Louis will call you within 24 hours with your free lighting quote.</p>
         <p>Need it sooner? Call or text:</p>
         <a href="tel:4255957758" class="sc-call" data-call>425-595-7758</a>
       </div>
@@ -522,8 +530,8 @@ section.pad{padding:74px 0}
 <section class="pad">
   <div class="wrap">
     <p class="h-eyebrow reveal">What We Light Up</p>
-    <h2 class="h-section reveal">Holiday Lighting, Handled Start to Finish</h2>
-    <p class="h-sub reveal">Pick one area or light the whole property — it's one free quote either way, and every package includes takedown.</p>
+    <h2 class="h-section reveal">Light One Part or the Whole Property</h2>
+    <p class="h-sub reveal">It's one free quote either way, and takedown is included no matter how much you light.</p>
     <div class="svc-grid">
       <div class="svc-card reveal">
         <div class="svc-art" aria-hidden="true"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -542,7 +550,7 @@ section.pad{padding:74px 0}
 </defs><rect width="400" height="200" fill="url(#skyA)"/><circle cx="58.1" cy="77.2" r="1.1" fill="#fff" opacity="0.59"/><circle cx="51.8" cy="69.9" r="1.1" fill="#fff" opacity="0.46"/><circle cx="312.0" cy="13.9" r="1.1" fill="#fff" opacity="0.26"/><circle cx="173.9" cy="70.0" r="1.1" fill="#fff" opacity="0.25"/><circle cx="109.3" cy="73.4" r="0.9" fill="#fff" opacity="0.52"/><circle cx="355.8" cy="8.6" r="1.4" fill="#fff" opacity="0.26"/><circle cx="9.6" cy="80.0" r="1.1" fill="#fff" opacity="0.56"/><circle cx="287.6" cy="50.3" r="1.1" fill="#fff" opacity="0.59"/><circle cx="220.5" cy="35.0" r="1.1" fill="#fff" opacity="0.55"/><circle cx="375.5" cy="83.8" r="1.4" fill="#fff" opacity="0.44"/><circle cx="363.8" cy="14.4" r="1.4" fill="#fff" opacity="0.53"/><circle cx="339.7" cy="16.2" r="1.4" fill="#fff" opacity="0.40"/><circle cx="383.6" cy="48.1" r="1.4" fill="#fff" opacity="0.69"/><circle cx="328.1" cy="62.3" r="1.4" fill="#fff" opacity="0.39"/><circle cx="383.7" cy="47.9" r="1.1" fill="#fff" opacity="0.67"/><circle cx="234.5" cy="8.9" r="1.1" fill="#fff" opacity="0.36"/><path d="M18 96 L37 178 L-1 178 Z" fill="#141c4d"/><path d="M18 112 L32 158 L4 158 Z" fill="#101744" opacity=".8"/><path d="M48 116 L67 178 L29 178 Z" fill="#141c4d"/><path d="M48 132 L62 158 L34 158 Z" fill="#101744" opacity=".8"/><path d="M352 116 L371 178 L333 178 Z" fill="#141c4d"/><path d="M352 132 L366 158 L338 158 Z" fill="#101744" opacity=".8"/><path d="M382 98 L401 178 L363 178 Z" fill="#141c4d"/><path d="M382 114 L396 158 L368 158 Z" fill="#101744" opacity=".8"/><rect x="0" y="176" width="400" height="24" fill="#101744"/><rect x="88" y="104" width="224" height="74" fill="#151d52"/><path d="M62 110 L200 46 L338 110 Z" fill="#1b2568"/><path d="M200 46 L338 110 L338 112 L200 50 Z" fill="#141c4d"/><circle cx="131" cy="131" r="30" fill="url(#warmA)"/><rect x="110" y="118" width="42" height="30" rx="3" fill="#ffd98a" opacity=".92"/><path d="M131 118 v30 M110 133 h42" stroke="#151d52" stroke-width="2"/><circle cx="273" cy="131" r="30" fill="url(#warmA)"/><rect x="252" y="118" width="42" height="30" rx="3" fill="#ffd98a" opacity=".92"/><path d="M273 118 v30 M252 133 h42" stroke="#151d52" stroke-width="2"/><rect x="176" y="136" width="48" height="42" fill="#101744"/><rect x="182" y="142" width="36" height="36" rx="2" fill="#26307a"/><circle cx="200" cy="158" r="16" fill="url(#glowA)"/><circle cx="200" cy="158" r="9" fill="none" stroke="#1f9d55" stroke-width="4"/><circle cx="200" cy="158" r="9" fill="none" stroke="#ffe9b0" stroke-width="1.2" stroke-dasharray="1.5 3.5"/><circle cx="62.0" cy="110.0" r="8" fill="url(#glowA)"/><circle cx="73.5" cy="104.7" r="8" fill="url(#glowA)"/><circle cx="85.0" cy="99.3" r="8" fill="url(#glowA)"/><circle cx="96.5" cy="94.0" r="8" fill="url(#glowA)"/><circle cx="108.0" cy="88.7" r="8" fill="url(#glowA)"/><circle cx="119.5" cy="83.3" r="8" fill="url(#glowA)"/><circle cx="131.0" cy="78.0" r="8" fill="url(#glowA)"/><circle cx="142.5" cy="72.7" r="8" fill="url(#glowA)"/><circle cx="154.0" cy="67.3" r="8" fill="url(#glowA)"/><circle cx="165.5" cy="62.0" r="8" fill="url(#glowA)"/><circle cx="177.0" cy="56.7" r="8" fill="url(#glowA)"/><circle cx="188.5" cy="51.3" r="8" fill="url(#glowA)"/><circle cx="200.0" cy="46.0" r="8" fill="url(#glowA)"/><circle cx="211.5" cy="51.3" r="8" fill="url(#glowA)"/><circle cx="223.0" cy="56.7" r="8" fill="url(#glowA)"/><circle cx="234.5" cy="62.0" r="8" fill="url(#glowA)"/><circle cx="246.0" cy="67.3" r="8" fill="url(#glowA)"/><circle cx="257.5" cy="72.7" r="8" fill="url(#glowA)"/><circle cx="269.0" cy="78.0" r="8" fill="url(#glowA)"/><circle cx="280.5" cy="83.3" r="8" fill="url(#glowA)"/><circle cx="292.0" cy="88.7" r="8" fill="url(#glowA)"/><circle cx="303.5" cy="94.0" r="8" fill="url(#glowA)"/><circle cx="315.0" cy="99.3" r="8" fill="url(#glowA)"/><circle cx="326.5" cy="104.7" r="8" fill="url(#glowA)"/><circle cx="338.0" cy="110.0" r="8" fill="url(#glowA)"/><circle cx="62.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="75.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="88.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="312.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="325.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="338.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="62.0" cy="110.0" r="2.3" fill="#ffe9b0"/><circle cx="73.5" cy="104.7" r="2.3" fill="#ffe9b0"/><circle cx="85.0" cy="99.3" r="2.3" fill="#ffe9b0"/><circle cx="96.5" cy="94.0" r="2.3" fill="#ffe9b0"/><circle cx="108.0" cy="88.7" r="2.3" fill="#ffe9b0"/><circle cx="119.5" cy="83.3" r="2.3" fill="#ffe9b0"/><circle cx="131.0" cy="78.0" r="2.3" fill="#ffe9b0"/><circle cx="142.5" cy="72.7" r="2.3" fill="#ffe9b0"/><circle cx="154.0" cy="67.3" r="2.3" fill="#ffe9b0"/><circle cx="165.5" cy="62.0" r="2.3" fill="#ffe9b0"/><circle cx="177.0" cy="56.7" r="2.3" fill="#ffe9b0"/><circle cx="188.5" cy="51.3" r="2.3" fill="#ffe9b0"/><circle cx="200.0" cy="46.0" r="2.3" fill="#ffe9b0"/><circle cx="211.5" cy="51.3" r="2.3" fill="#ffe9b0"/><circle cx="223.0" cy="56.7" r="2.3" fill="#ffe9b0"/><circle cx="234.5" cy="62.0" r="2.3" fill="#ffe9b0"/><circle cx="246.0" cy="67.3" r="2.3" fill="#ffe9b0"/><circle cx="257.5" cy="72.7" r="2.3" fill="#ffe9b0"/><circle cx="269.0" cy="78.0" r="2.3" fill="#ffe9b0"/><circle cx="280.5" cy="83.3" r="2.3" fill="#ffe9b0"/><circle cx="292.0" cy="88.7" r="2.3" fill="#ffe9b0"/><circle cx="303.5" cy="94.0" r="2.3" fill="#ffe9b0"/><circle cx="315.0" cy="99.3" r="2.3" fill="#ffe9b0"/><circle cx="326.5" cy="104.7" r="2.3" fill="#ffe9b0"/><circle cx="338.0" cy="110.0" r="2.3" fill="#ffe9b0"/><circle cx="62.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="75.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="88.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="312.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="325.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="338.0" cy="112.0" r="2.3" fill="#ffe9b0"/></svg></div>
         <div class="svc-body">
           <h3>Roofline &amp; Eaves</h3>
-          <p>Crisp, straight lines of C9 or mini bulbs custom-cut to your roof, plus window frames and porch columns. Clipped on — never stapled or nailed.</p>
+          <p>Crisp, straight lines of C9 or mini bulbs custom-cut to your roof, plus window frames and porch columns. Clipped on, never stapled or nailed.</p>
           <a href="#quote" class="svc-link">Get a quote →</a>
         </div>
       </div>
@@ -589,16 +597,16 @@ section.pad{padding:74px 0}
         </div>
       </div>
     </div>
-    <p class="season-note reveal"><strong>Every package is all-inclusive:</strong> design, commercial-grade lights, installation, mid-season repairs, takedown after the holidays and off-season storage. One price, no surprises.</p>
+    <p class="season-note reveal"><strong>One price covers all of it:</strong> the design, the lights, the install, any repairs during the season, takedown in January and storage until next year.</p>
   </div>
 </section>
 
 <!-- ========================= WHY US ========================= -->
 <section class="pad section-soft">
   <div class="wrap">
-    <p class="h-eyebrow reveal">Why Homeowners Choose Trinity</p>
+    <p class="h-eyebrow reveal">Why Homeowners Hire Us</p>
     <h2 class="h-section reveal">A Display You Don't Have to Think About</h2>
-    <p class="h-sub reveal">Hiring someone to work on your home is a leap of faith. Here's why Snohomish County trusts us with it.</p>
+    <p class="h-sub reveal">Six things worth knowing before you let anyone climb around on your roof.</p>
     <div class="why-grid">
       <div class="why-item reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -613,17 +621,17 @@ section.pad{padding:74px 0}
       <div class="why-item reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11 12 3l10 8"/><path d="M5 9.7V20h14V9.7"/><path d="M9 20v-5h6v5"/></svg></div>
         <h3>No nails, no staples</h3>
-        <p>Everything hangs on purpose-made clips that come off cleanly in January, leaving your shingles and gutters untouched.</p>
+        <p>Everything hangs on clips made for the job. They come off clean in January and leave your shingles and gutters alone.</p>
       </div>
       <div class="why-item reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <h3>Mid-season repairs free</h3>
-        <p>If a strand goes dark between Thanksgiving and New Year's, call us and we'll come fix it at no extra charge.</p>
+        <p>If a strand goes dark between Thanksgiving and New Year's, call or text and we'll come fix it. No charge.</p>
       </div>
       <div class="why-item reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></div>
         <h3>Takedown &amp; storage included</h3>
-        <p>We pull everything down after the holidays and store your lights until next season — labeled and ready to go back up.</p>
+        <p>We pull everything down after the holidays and keep your lights in storage, labeled and ready to go back up next year.</p>
       </div>
       <div class="why-item reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -638,18 +646,18 @@ section.pad{padding:74px 0}
 <section class="pad">
   <div class="wrap">
     <p class="h-eyebrow reveal">How It Works</p>
-    <h2 class="h-section reveal">Lit Up in 3 Easy Steps</h2>
-    <p class="h-sub reveal">No pushy sales calls. No ladders. No January cleanup.</p>
+    <h2 class="h-section reveal">Three Steps, and Two of Them Are Ours</h2>
+    <p class="h-sub reveal">No sales visit, no ladders, and nothing left to clean up in January.</p>
     <div class="steps">
       <div class="step reveal">
         <div class="num"></div>
         <h3>Tell us what you picture</h3>
-        <p>Fill out the 60-second form or call us. We'll look at your home and put together a design and a firm price.</p>
+        <p>Fill out the 60-second form or call us. We'll look at your home and come back with a design and a firm price.</p>
       </div>
       <div class="step reveal">
         <div class="num"></div>
         <h3>We install before the season</h3>
-        <p>You'll hear back within 24 hours with clear pricing and an install date — most homes go up between late October and early December.</p>
+        <p>You'll hear back within 24 hours with pricing and an install date. Most homes go up between late October and early December.</p>
       </div>
       <div class="step reveal">
         <div class="num"></div>
@@ -669,7 +677,7 @@ section.pad{padding:74px 0}
       </div>
       <div>
         <h2>The Trinity Stays-Lit Guarantee</h2>
-        <p>Your display stays lit all season or we fix it free. If a strand, bulb or timer fails between installation and takedown, call us and we'll be back out to make it right — no hassle, no extra charge.</p>
+        <p>Your display stays lit all season or we fix it free. If a strand, bulb or timer quits between the install and takedown, call or text and we'll be back out to sort it. No charge, no argument.</p>
       </div>
     </div>
   </div>
@@ -685,7 +693,7 @@ section.pad{padding:74px 0}
       </div>
       <div class="reviews-score reveal">5.0</div>
       <div class="reviews-stars reveal">★★★★★</div>
-      <div class="reviews-count reveal">Based on 28 verified reviews of our work at Trinity</div>
+      <div class="reviews-count reveal">Based on 28 verified Google reviews of our cleaning work</div>
     </div>
     <div class="reviews-grid">
       <div class="review reveal"><div class="rs">★★★★★</div><p>"Excellent job on our windows and gutters. Other companies missed spots — Louis cleared it all out. Communication was great. Highly recommend."</p><div class="rn">Mira</div><div class="rl">Snohomish County, WA</div></div>
@@ -705,8 +713,8 @@ section.pad{padding:74px 0}
 <section class="pad section-soft">
   <div class="wrap">
     <p class="h-eyebrow reveal">Areas We Serve</p>
-    <h2 class="h-section reveal">Proudly Lighting Up Snohomish County</h2>
-    <p class="h-sub reveal">Based locally and installing for homeowners across the county and nearby communities.</p>
+    <h2 class="h-section reveal">We Install All Over Snohomish County</h2>
+    <p class="h-sub reveal">We're based in Snohomish and work across the county and the towns around it.</p>
     <div class="areas-grid reveal">
       <span>Snohomish</span><span>Monroe</span><span>Lake Stevens</span><span>Everett</span>
       <span>Marysville</span><span>Mill Creek</span><span>Mukilteo</span><span>Bothell</span>
@@ -719,17 +727,17 @@ section.pad{padding:74px 0}
 <!-- ========================= FAQ ========================= -->
 <section class="pad">
   <div class="wrap">
-    <p class="h-eyebrow reveal">Questions? Answered.</p>
+    <p class="h-eyebrow reveal">Before You Book</p>
     <h2 class="h-section reveal">Frequently Asked Questions</h2>
     <div class="faq" style="margin-top:36px">
-      <details class="reveal"><summary>How much does holiday light installation cost?<span class="plus"></span></summary><div class="faq-body">It depends on the size of your home, how much of it you want lit and how easy the roofline is to reach — so we give you a custom quote, free and with no obligation. Send us your details and most quotes come back within 24 hours.</div></details>
+      <details class="reveal"><summary>How much does holiday light installation cost?<span class="plus"></span></summary><div class="faq-body">It depends on the size of your home, how much of it you want lit and how easy the roofline is to reach, so every quote is priced to the house and costs you nothing. Send us your details and most quotes come back within 24 hours.</div></details>
       <details class="reveal"><summary>Do you supply the lights, or do I?<span class="plus"></span></summary><div class="faq-body">We supply commercial-grade LED lights custom-cut to your home, and that's included in your quote. If you'd rather we hang lights you already own, just tell us — we'll take a look and let you know what we can safely work with.</div></details>
-      <details class="reveal"><summary>When do you install, and when do you take them down?<span class="plus"></span></summary><div class="faq-body">Most installs happen between late October and early December, and takedown runs through January. Booking early gets you the best choice of dates — our calendar fills up well before Thanksgiving.</div></details>
-      <details class="reveal"><summary>Will the clips damage my roof or gutters?<span class="plus"></span></summary><div class="faq-body">No. We use purpose-made plastic clips that attach to your shingles and gutter lips — no nails, no staples, no drilling — and they come off cleanly at takedown.</div></details>
+      <details class="reveal"><summary>When do you install, and when do you take them down?<span class="plus"></span></summary><div class="faq-body">Most installs happen between late October and early December, and takedown runs through January. Book early for the best choice of dates. The calendar usually fills before Thanksgiving.</div></details>
+      <details class="reveal"><summary>Will the clips damage my roof or gutters?<span class="plus"></span></summary><div class="faq-body">No. We use plastic clips that grip your shingles and gutter lips. No nails, no staples, no drilling, and they come off clean at takedown.</div></details>
       <details class="reveal"><summary>What happens if a section stops working?<span class="plus"></span></summary><div class="faq-body">Call or text us and we'll come out and fix it at no extra charge. Repairs during the season are covered by our Stays-Lit Guarantee.</div></details>
       <details class="reveal"><summary>Do I have to be home for the install?<span class="plus"></span></summary><div class="faq-body">Usually not. We just need access to the exterior and an outdoor outlet. We'll confirm all the details — including where the timer goes — when we schedule you.</div></details>
-      <details class="reveal"><summary>What areas do you serve?<span class="plus"></span></summary><div class="faq-body">We serve Snohomish County and the surrounding communities, including Snohomish, Monroe, Lake Stevens, Everett, Marysville, Mill Creek, Mukilteo and more.</div></details>
-      <details class="reveal"><summary>Do you also do exterior cleaning?<span class="plus"></span></summary><div class="faq-body">We do — windows, gutters, roof soft-washing and pressure washing all year round. Plenty of homeowners have us clean the gutters on the same visit as the light install. <a href="/book" style="color:var(--blue);font-weight:700">See our cleaning services →</a></div></details>
+      <details class="reveal"><summary>What areas do you serve?<span class="plus"></span></summary><div class="faq-body">Snohomish County and the towns around it: Snohomish, Monroe, Lake Stevens, Everett, Marysville, Mill Creek, Mukilteo and more.</div></details>
+      <details class="reveal"><summary>Do you also do exterior cleaning?<span class="plus"></span></summary><div class="faq-body">We do. Windows, gutters, roof soft-washing and pressure washing, all year round. Plenty of homeowners have us clean the gutters on the same visit as the light install. <a href="/book" style="color:var(--blue);font-weight:700">See our cleaning services →</a></div></details>
     </div>
   </div>
 </section>
@@ -737,8 +745,8 @@ section.pad{padding:74px 0}
 <!-- ========================= FINAL CTA ========================= -->
 <section class="pad final">
   <div class="wrap">
-    <h2 class="reveal">Ready to Light Up the Block?</h2>
-    <p class="reveal">Spots fill up fast once the season starts. Get your free, no-obligation quote today — it takes 60 seconds, and there's zero pressure.</p>
+    <h2 class="reveal">Let's Get Your Install Booked</h2>
+    <p class="reveal">The calendar fills up before Thanksgiving. The form takes 60 seconds and the quote costs you nothing.</p>
     <div class="final-actions reveal">
       <a href="#quote" class="btn btn-cta btn-lg">Get My Free Quote</a>
       <a href="tel:4255957758" class="final-call" data-call>
