@@ -186,17 +186,17 @@ h2.h-section{
 /* ---------- lead form card ---------- */
 .form-card{
   background:#fff;border-radius:20px;box-shadow:var(--shadow);color:var(--text);
-  padding:30px 28px 26px;position:relative;
+  padding:26px 24px 22px;position:relative;
 }
 .form-card::before{
   content:"⚡ Free · No obligation";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
   background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:800;letter-spacing:.03em;
   padding:7px 16px;border-radius:100px;white-space:nowrap;box-shadow:0 6px 16px rgba(245,158,11,.4);
 }
-.form-card h2{font-size:24px;font-weight:800;color:var(--ink);text-align:center;margin:8px 0 4px}
-.form-card .fc-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:20px}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.form-card h2{font-size:23px;font-weight:800;color:var(--ink);text-align:center;margin:4px 0 3px}
+.form-card .fc-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:16px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:5px}
 .field input,.field select{
   width:100%;border:1.5px solid var(--line);border-radius:11px;padding:13px 14px;
   font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg-soft);
@@ -251,7 +251,7 @@ section.pad{padding:74px 0}
 .section-soft{background:var(--bg-soft)}
 
 /* services */
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .svc-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 22px rgba(26,35,96,.06);transition:transform .22s ease,box-shadow .22s ease}
 .svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(26,35,96,.14)}
 .svc-card img{width:100%;height:190px;object-fit:cover}
@@ -354,15 +354,12 @@ section.pad{padding:74px 0}
       #ffffff 81px 90px, transparent 90px 108px);
   background-color:var(--blue-deep);
 }
-.svc-card .svc-ic{
-  height:120px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(150deg,#2c3aa8,#1a2360);position:relative;overflow:hidden;
-}
-.svc-card .svc-ic::after{
+.svc-card .svc-art{height:190px;position:relative;overflow:hidden;background:#1a2360}
+.svc-card .svc-art svg{width:100%;height:100%;display:block}
+.svc-card .svc-art::after{
   content:"";position:absolute;inset:auto 0 0 0;height:5px;
   background:repeating-linear-gradient(90deg,#ffb400 0 7px,transparent 7px 20px,#e2493f 20px 27px,transparent 27px 40px,#1f9d55 40px 47px,transparent 47px 60px);
 }
-.svc-card .svc-ic svg{width:46px;height:46px;color:var(--accent);stroke-width:1.6}
 .season-note{
   max-width:820px;margin:34px auto 0;text-align:center;font-size:15px;color:var(--muted);
   background:#fff;border:1px dashed var(--line);border-radius:14px;padding:18px 22px;
@@ -387,7 +384,11 @@ section.pad{padding:74px 0}
   .header-phone{padding:10px;border:2px solid var(--blue);border-radius:11px}
   .logo img{height:40px}
   .logo-text{font-size:18px}
-  .hero{padding:40px 0 48px}
+  .hero{padding:20px 0 42px}
+  .hero-badge{margin-bottom:13px;font-size:11.5px;padding:7px 12px}
+  .hero-inner h1{font-size:31px;margin-bottom:12px}
+  .hero-lead{margin-bottom:20px;font-size:15.5px}
+  .form-card{padding:22px 16px 20px}
   .svc-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .reviews-grid{grid-template-columns:1fr}
@@ -396,7 +397,9 @@ section.pad{padding:74px 0}
   .sticky-cta{display:flex}
   body{padding-bottom:78px}
   .hero-actions .btn-cta{width:100%}
-  .svc-picker{grid-template-columns:1fr}
+  .svc-picker{gap:8px}
+  .svc-opt label{padding:10px 9px;gap:8px;font-size:13.5px;line-height:1.25}
+  .svc-opt .box{width:20px;height:20px;border-radius:6px}
 }
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
@@ -426,15 +429,15 @@ section.pad{padding:74px 0}
 <!-- ========================= HERO ========================= -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-badge">★★★★★&nbsp;&nbsp;Rated 5.0 on Google · Snohomish County</span>
-    <h1>The Brightest House on the Block — <span class="hl">Without the Ladder.</span></h1>
-    <p class="hero-lead"><strong>We design, hang, maintain, take down and store</strong> your Christmas lights, so you never climb a roof in the rain again. Licensed, bonded &amp; insured — and your free, no-obligation quote comes back in under 24&nbsp;hours.</p>
+    <span class="hero-badge">★★★★★&nbsp;&nbsp;Rated 5.0 on Google</span>
+    <h1>The <span class="hl">Brightest</span> House on the Block.</h1>
+    <p class="hero-lead"><strong>We hang them, we take them down.</strong> You never touch a ladder. Free quote in 24&nbsp;hours.</p>
 
     <!-- LEAD FORM (single conversion goal, above the fold) -->
     <div class="form-card" id="quote">
       <form id="quoteForm" action="https://formsubmit.co/louisroymiller@gmail.com" method="POST" novalidate>
-        <h2>Get Your Free Lighting Quote</h2>
-        <p class="fc-sub">We'll call you right back.</p>
+        <h2>Get Your Free Quote</h2>
+        <p class="fc-sub">60 seconds. We'll call you right back.</p>
 
         <input type="hidden" name="_subject" value="New Holiday Lighting Request — Landing Page (/lights)">
         <input type="hidden" name="_captcha" value="false">
@@ -451,27 +454,23 @@ section.pad{padding:74px 0}
           <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
         </div>
         <div class="field">
-          <label>What would you like lit up? <span style="font-weight:500;color:var(--muted)">(optional — tap all that apply)</span></label>
+          <label>What would you like lit up? <span style="font-weight:500;color:var(--muted)">(optional)</span></label>
           <div class="svc-picker" id="svcPicker">
             <div class="svc-opt">
               <input type="checkbox" id="s-roofline" name="Lighting" value="Roofline &amp; Eaves">
-              <label for="s-roofline"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Roofline &amp; Eaves</label>
+              <label for="s-roofline"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Roofline</label>
             </div>
             <div class="svc-opt">
               <input type="checkbox" id="s-trees" name="Lighting" value="Trees &amp; Shrubs">
-              <label for="s-trees"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Trees &amp; Shrubs</label>
+              <label for="s-trees"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Trees</label>
             </div>
             <div class="svc-opt">
               <input type="checkbox" id="s-wreaths" name="Lighting" value="Wreaths &amp; Garland">
-              <label for="s-wreaths"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Wreaths &amp; Garland</label>
+              <label for="s-wreaths"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Wreaths</label>
             </div>
-            <div class="svc-opt">
-              <input type="checkbox" id="s-walkways" name="Lighting" value="Walkways, Columns &amp; Windows">
-              <label for="s-walkways"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Walkways &amp; Columns</label>
-            </div>
-            <div class="svc-opt svc-full">
-              <input type="checkbox" id="s-notsure" name="Lighting" value="Not sure — design something for me">
-              <label for="s-notsure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure — design something for me</label>
+              <div class="svc-opt">
+              <input type="checkbox" id="s-notsure" name="Lighting" value="Not sure — design it for me">
+              <label for="s-notsure"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Not sure yet</label>
             </div>
           </div>
         </div>
@@ -527,42 +526,65 @@ section.pad{padding:74px 0}
     <p class="h-sub reveal">Pick one area or light the whole property — it's one free quote either way, and every package includes takedown.</p>
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <div class="svc-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11 12 3l10 8"/><path d="M4.5 9.5V20h15V9.5"/><path d="M2.5 11.5c1.2 1.4 2.6 1.4 3.8 0s2.6-1.4 3.8 0 2.6 1.4 3.8 0 2.6-1.4 3.8 0 2.6 1.4 3.8 0"/></svg>
-        </div>
+        <div class="svc-art" aria-hidden="true"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" xmlns="http://www.w3.org/2000/svg"><defs>
+<linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1a2360"/><stop offset="1" stop-color="#2c3aa8"/>
+</linearGradient>
+<radialGradient id="glowA">
+<stop offset="0" stop-color="#ffd166" stop-opacity=".85"/>
+<stop offset=".45" stop-color="#ffb400" stop-opacity=".35"/>
+<stop offset="1" stop-color="#ffb400" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="warmA">
+<stop offset="0" stop-color="#ffdf9a" stop-opacity=".55"/>
+<stop offset="1" stop-color="#ffdf9a" stop-opacity="0"/>
+</radialGradient>
+</defs><rect width="400" height="200" fill="url(#skyA)"/><circle cx="58.1" cy="77.2" r="1.1" fill="#fff" opacity="0.59"/><circle cx="51.8" cy="69.9" r="1.1" fill="#fff" opacity="0.46"/><circle cx="312.0" cy="13.9" r="1.1" fill="#fff" opacity="0.26"/><circle cx="173.9" cy="70.0" r="1.1" fill="#fff" opacity="0.25"/><circle cx="109.3" cy="73.4" r="0.9" fill="#fff" opacity="0.52"/><circle cx="355.8" cy="8.6" r="1.4" fill="#fff" opacity="0.26"/><circle cx="9.6" cy="80.0" r="1.1" fill="#fff" opacity="0.56"/><circle cx="287.6" cy="50.3" r="1.1" fill="#fff" opacity="0.59"/><circle cx="220.5" cy="35.0" r="1.1" fill="#fff" opacity="0.55"/><circle cx="375.5" cy="83.8" r="1.4" fill="#fff" opacity="0.44"/><circle cx="363.8" cy="14.4" r="1.4" fill="#fff" opacity="0.53"/><circle cx="339.7" cy="16.2" r="1.4" fill="#fff" opacity="0.40"/><circle cx="383.6" cy="48.1" r="1.4" fill="#fff" opacity="0.69"/><circle cx="328.1" cy="62.3" r="1.4" fill="#fff" opacity="0.39"/><circle cx="383.7" cy="47.9" r="1.1" fill="#fff" opacity="0.67"/><circle cx="234.5" cy="8.9" r="1.1" fill="#fff" opacity="0.36"/><path d="M18 96 L37 178 L-1 178 Z" fill="#141c4d"/><path d="M18 112 L32 158 L4 158 Z" fill="#101744" opacity=".8"/><path d="M48 116 L67 178 L29 178 Z" fill="#141c4d"/><path d="M48 132 L62 158 L34 158 Z" fill="#101744" opacity=".8"/><path d="M352 116 L371 178 L333 178 Z" fill="#141c4d"/><path d="M352 132 L366 158 L338 158 Z" fill="#101744" opacity=".8"/><path d="M382 98 L401 178 L363 178 Z" fill="#141c4d"/><path d="M382 114 L396 158 L368 158 Z" fill="#101744" opacity=".8"/><rect x="0" y="176" width="400" height="24" fill="#101744"/><rect x="88" y="104" width="224" height="74" fill="#151d52"/><path d="M62 110 L200 46 L338 110 Z" fill="#1b2568"/><path d="M200 46 L338 110 L338 112 L200 50 Z" fill="#141c4d"/><circle cx="131" cy="131" r="30" fill="url(#warmA)"/><rect x="110" y="118" width="42" height="30" rx="3" fill="#ffd98a" opacity=".92"/><path d="M131 118 v30 M110 133 h42" stroke="#151d52" stroke-width="2"/><circle cx="273" cy="131" r="30" fill="url(#warmA)"/><rect x="252" y="118" width="42" height="30" rx="3" fill="#ffd98a" opacity=".92"/><path d="M273 118 v30 M252 133 h42" stroke="#151d52" stroke-width="2"/><rect x="176" y="136" width="48" height="42" fill="#101744"/><rect x="182" y="142" width="36" height="36" rx="2" fill="#26307a"/><circle cx="200" cy="158" r="16" fill="url(#glowA)"/><circle cx="200" cy="158" r="9" fill="none" stroke="#1f9d55" stroke-width="4"/><circle cx="200" cy="158" r="9" fill="none" stroke="#ffe9b0" stroke-width="1.2" stroke-dasharray="1.5 3.5"/><circle cx="62.0" cy="110.0" r="8" fill="url(#glowA)"/><circle cx="73.5" cy="104.7" r="8" fill="url(#glowA)"/><circle cx="85.0" cy="99.3" r="8" fill="url(#glowA)"/><circle cx="96.5" cy="94.0" r="8" fill="url(#glowA)"/><circle cx="108.0" cy="88.7" r="8" fill="url(#glowA)"/><circle cx="119.5" cy="83.3" r="8" fill="url(#glowA)"/><circle cx="131.0" cy="78.0" r="8" fill="url(#glowA)"/><circle cx="142.5" cy="72.7" r="8" fill="url(#glowA)"/><circle cx="154.0" cy="67.3" r="8" fill="url(#glowA)"/><circle cx="165.5" cy="62.0" r="8" fill="url(#glowA)"/><circle cx="177.0" cy="56.7" r="8" fill="url(#glowA)"/><circle cx="188.5" cy="51.3" r="8" fill="url(#glowA)"/><circle cx="200.0" cy="46.0" r="8" fill="url(#glowA)"/><circle cx="211.5" cy="51.3" r="8" fill="url(#glowA)"/><circle cx="223.0" cy="56.7" r="8" fill="url(#glowA)"/><circle cx="234.5" cy="62.0" r="8" fill="url(#glowA)"/><circle cx="246.0" cy="67.3" r="8" fill="url(#glowA)"/><circle cx="257.5" cy="72.7" r="8" fill="url(#glowA)"/><circle cx="269.0" cy="78.0" r="8" fill="url(#glowA)"/><circle cx="280.5" cy="83.3" r="8" fill="url(#glowA)"/><circle cx="292.0" cy="88.7" r="8" fill="url(#glowA)"/><circle cx="303.5" cy="94.0" r="8" fill="url(#glowA)"/><circle cx="315.0" cy="99.3" r="8" fill="url(#glowA)"/><circle cx="326.5" cy="104.7" r="8" fill="url(#glowA)"/><circle cx="338.0" cy="110.0" r="8" fill="url(#glowA)"/><circle cx="62.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="75.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="88.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="312.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="325.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="338.0" cy="112.0" r="8" fill="url(#glowA)"/><circle cx="62.0" cy="110.0" r="2.3" fill="#ffe9b0"/><circle cx="73.5" cy="104.7" r="2.3" fill="#ffe9b0"/><circle cx="85.0" cy="99.3" r="2.3" fill="#ffe9b0"/><circle cx="96.5" cy="94.0" r="2.3" fill="#ffe9b0"/><circle cx="108.0" cy="88.7" r="2.3" fill="#ffe9b0"/><circle cx="119.5" cy="83.3" r="2.3" fill="#ffe9b0"/><circle cx="131.0" cy="78.0" r="2.3" fill="#ffe9b0"/><circle cx="142.5" cy="72.7" r="2.3" fill="#ffe9b0"/><circle cx="154.0" cy="67.3" r="2.3" fill="#ffe9b0"/><circle cx="165.5" cy="62.0" r="2.3" fill="#ffe9b0"/><circle cx="177.0" cy="56.7" r="2.3" fill="#ffe9b0"/><circle cx="188.5" cy="51.3" r="2.3" fill="#ffe9b0"/><circle cx="200.0" cy="46.0" r="2.3" fill="#ffe9b0"/><circle cx="211.5" cy="51.3" r="2.3" fill="#ffe9b0"/><circle cx="223.0" cy="56.7" r="2.3" fill="#ffe9b0"/><circle cx="234.5" cy="62.0" r="2.3" fill="#ffe9b0"/><circle cx="246.0" cy="67.3" r="2.3" fill="#ffe9b0"/><circle cx="257.5" cy="72.7" r="2.3" fill="#ffe9b0"/><circle cx="269.0" cy="78.0" r="2.3" fill="#ffe9b0"/><circle cx="280.5" cy="83.3" r="2.3" fill="#ffe9b0"/><circle cx="292.0" cy="88.7" r="2.3" fill="#ffe9b0"/><circle cx="303.5" cy="94.0" r="2.3" fill="#ffe9b0"/><circle cx="315.0" cy="99.3" r="2.3" fill="#ffe9b0"/><circle cx="326.5" cy="104.7" r="2.3" fill="#ffe9b0"/><circle cx="338.0" cy="110.0" r="2.3" fill="#ffe9b0"/><circle cx="62.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="75.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="88.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="312.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="325.0" cy="112.0" r="2.3" fill="#ffe9b0"/><circle cx="338.0" cy="112.0" r="2.3" fill="#ffe9b0"/></svg></div>
         <div class="svc-body">
           <h3>Roofline &amp; Eaves</h3>
-          <p>Crisp, straight lines of C9 or mini bulbs custom-cut to your roof — clipped on, never stapled or nailed.</p>
+          <p>Crisp, straight lines of C9 or mini bulbs custom-cut to your roof, plus window frames and porch columns. Clipped on — never stapled or nailed.</p>
           <a href="#quote" class="svc-link">Get a quote →</a>
         </div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 6 10h3l-4 6h5v6h4v-6h5l-4-6h3z"/><circle cx="9.5" cy="12.5" r=".9"/><circle cx="14.5" cy="12.5" r=".9"/><circle cx="12" cy="7.5" r=".9"/></svg>
-        </div>
+        <div class="svc-art" aria-hidden="true"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" xmlns="http://www.w3.org/2000/svg"><defs>
+<linearGradient id="skyB" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1a2360"/><stop offset="1" stop-color="#2c3aa8"/>
+</linearGradient>
+<radialGradient id="glowB">
+<stop offset="0" stop-color="#ffd166" stop-opacity=".85"/>
+<stop offset=".45" stop-color="#ffb400" stop-opacity=".35"/>
+<stop offset="1" stop-color="#ffb400" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="warmB">
+<stop offset="0" stop-color="#ffdf9a" stop-opacity=".55"/>
+<stop offset="1" stop-color="#ffdf9a" stop-opacity="0"/>
+</radialGradient>
+</defs><rect width="400" height="200" fill="url(#skyB)"/><circle cx="376.9" cy="85.6" r="0.9" fill="#fff" opacity="0.28"/><circle cx="146.1" cy="20.2" r="1.1" fill="#fff" opacity="0.61"/><circle cx="103.6" cy="23.8" r="1.4" fill="#fff" opacity="0.27"/><circle cx="67.5" cy="42.2" r="1.4" fill="#fff" opacity="0.43"/><circle cx="339.8" cy="48.8" r="1.1" fill="#fff" opacity="0.42"/><circle cx="200.8" cy="81.7" r="1.1" fill="#fff" opacity="0.64"/><circle cx="186.4" cy="32.8" r="1.4" fill="#fff" opacity="0.42"/><circle cx="69.8" cy="20.9" r="0.9" fill="#fff" opacity="0.35"/><circle cx="132.2" cy="17.5" r="1.4" fill="#fff" opacity="0.48"/><circle cx="267.7" cy="21.3" r="1.1" fill="#fff" opacity="0.65"/><circle cx="290.9" cy="82.2" r="1.4" fill="#fff" opacity="0.59"/><circle cx="143.3" cy="88.4" r="0.9" fill="#fff" opacity="0.68"/><circle cx="376.5" cy="39.6" r="1.4" fill="#fff" opacity="0.58"/><circle cx="211.8" cy="47.2" r="1.4" fill="#fff" opacity="0.67"/><circle cx="206.0" cy="72.9" r="1.1" fill="#fff" opacity="0.55"/><circle cx="355.1" cy="44.7" r="1.4" fill="#fff" opacity="0.51"/><rect x="0" y="176" width="400" height="24" fill="#101744"/><rect x="193" y="158" width="14" height="22" fill="#141c4d"/><path d="M200 44 L236 96 L164 96 Z" fill="#243075"/><path d="M200 78 L256 130 L144 130 Z" fill="#243075"/><path d="M200 112 L274 164 L126 164 Z" fill="#243075"/><path d="M200 146 L290 198 L110 198 Z" fill="#243075"/><circle cx="174.0" cy="70.0" r="8" fill="url(#glowB)"/><circle cx="191.3" cy="76.1" r="8" fill="url(#glowB)"/><circle cx="208.7" cy="76.1" r="8" fill="url(#glowB)"/><circle cx="226.0" cy="70.0" r="8" fill="url(#glowB)"/><circle cx="238.0" cy="88.0" r="8" fill="url(#glowB)"/><circle cx="222.8" cy="85.1" r="8" fill="url(#glowB)"/><circle cx="207.6" cy="83.2" r="8" fill="url(#glowB)"/><circle cx="192.4" cy="83.2" r="8" fill="url(#glowB)"/><circle cx="177.2" cy="85.1" r="8" fill="url(#glowB)"/><circle cx="162.0" cy="88.0" r="8" fill="url(#glowB)"/><circle cx="150.0" cy="106.0" r="8" fill="url(#glowB)"/><circle cx="166.7" cy="109.5" r="8" fill="url(#glowB)"/><circle cx="183.3" cy="112.1" r="8" fill="url(#glowB)"/><circle cx="200.0" cy="113.0" r="8" fill="url(#glowB)"/><circle cx="216.7" cy="112.1" r="8" fill="url(#glowB)"/><circle cx="233.3" cy="109.5" r="8" fill="url(#glowB)"/><circle cx="250.0" cy="106.0" r="8" fill="url(#glowB)"/><circle cx="262.0" cy="124.0" r="8" fill="url(#glowB)"/><circle cx="246.5" cy="122.1" r="8" fill="url(#glowB)"/><circle cx="231.0" cy="120.5" r="8" fill="url(#glowB)"/><circle cx="215.5" cy="119.4" r="8" fill="url(#glowB)"/><circle cx="200.0" cy="119.0" r="8" fill="url(#glowB)"/><circle cx="184.5" cy="119.4" r="8" fill="url(#glowB)"/><circle cx="169.0" cy="120.5" r="8" fill="url(#glowB)"/><circle cx="153.5" cy="122.1" r="8" fill="url(#glowB)"/><circle cx="138.0" cy="124.0" r="8" fill="url(#glowB)"/><circle cx="126.0" cy="142.0" r="8" fill="url(#glowB)"/><circle cx="142.4" cy="144.4" r="8" fill="url(#glowB)"/><circle cx="158.9" cy="146.5" r="8" fill="url(#glowB)"/><circle cx="175.3" cy="148.1" r="8" fill="url(#glowB)"/><circle cx="191.8" cy="148.9" r="8" fill="url(#glowB)"/><circle cx="208.2" cy="148.9" r="8" fill="url(#glowB)"/><circle cx="224.7" cy="148.1" r="8" fill="url(#glowB)"/><circle cx="241.1" cy="146.5" r="8" fill="url(#glowB)"/><circle cx="257.6" cy="144.4" r="8" fill="url(#glowB)"/><circle cx="274.0" cy="142.0" r="8" fill="url(#glowB)"/><circle cx="286.0" cy="160.0" r="8" fill="url(#glowB)"/><circle cx="270.4" cy="158.6" r="8" fill="url(#glowB)"/><circle cx="254.7" cy="157.3" r="8" fill="url(#glowB)"/><circle cx="239.1" cy="156.2" r="8" fill="url(#glowB)"/><circle cx="223.5" cy="155.5" r="8" fill="url(#glowB)"/><circle cx="207.8" cy="155.1" r="8" fill="url(#glowB)"/><circle cx="192.2" cy="155.1" r="8" fill="url(#glowB)"/><circle cx="176.5" cy="155.5" r="8" fill="url(#glowB)"/><circle cx="160.9" cy="156.2" r="8" fill="url(#glowB)"/><circle cx="145.3" cy="157.3" r="8" fill="url(#glowB)"/><circle cx="129.6" cy="158.6" r="8" fill="url(#glowB)"/><circle cx="114.0" cy="160.0" r="8" fill="url(#glowB)"/><circle cx="174.0" cy="70.0" r="2.3" fill="#ffe9b0"/><circle cx="191.3" cy="76.1" r="2.3" fill="#ffe9b0"/><circle cx="208.7" cy="76.1" r="2.3" fill="#ffe9b0"/><circle cx="226.0" cy="70.0" r="2.3" fill="#ffe9b0"/><circle cx="238.0" cy="88.0" r="2.3" fill="#ffe9b0"/><circle cx="222.8" cy="85.1" r="2.3" fill="#ffe9b0"/><circle cx="207.6" cy="83.2" r="2.3" fill="#ffe9b0"/><circle cx="192.4" cy="83.2" r="2.3" fill="#ffe9b0"/><circle cx="177.2" cy="85.1" r="2.3" fill="#ffe9b0"/><circle cx="162.0" cy="88.0" r="2.3" fill="#ffe9b0"/><circle cx="150.0" cy="106.0" r="2.3" fill="#ffe9b0"/><circle cx="166.7" cy="109.5" r="2.3" fill="#ffe9b0"/><circle cx="183.3" cy="112.1" r="2.3" fill="#ffe9b0"/><circle cx="200.0" cy="113.0" r="2.3" fill="#ffe9b0"/><circle cx="216.7" cy="112.1" r="2.3" fill="#ffe9b0"/><circle cx="233.3" cy="109.5" r="2.3" fill="#ffe9b0"/><circle cx="250.0" cy="106.0" r="2.3" fill="#ffe9b0"/><circle cx="262.0" cy="124.0" r="2.3" fill="#ffe9b0"/><circle cx="246.5" cy="122.1" r="2.3" fill="#ffe9b0"/><circle cx="231.0" cy="120.5" r="2.3" fill="#ffe9b0"/><circle cx="215.5" cy="119.4" r="2.3" fill="#ffe9b0"/><circle cx="200.0" cy="119.0" r="2.3" fill="#ffe9b0"/><circle cx="184.5" cy="119.4" r="2.3" fill="#ffe9b0"/><circle cx="169.0" cy="120.5" r="2.3" fill="#ffe9b0"/><circle cx="153.5" cy="122.1" r="2.3" fill="#ffe9b0"/><circle cx="138.0" cy="124.0" r="2.3" fill="#ffe9b0"/><circle cx="126.0" cy="142.0" r="2.3" fill="#ffe9b0"/><circle cx="142.4" cy="144.4" r="2.3" fill="#ffe9b0"/><circle cx="158.9" cy="146.5" r="2.3" fill="#ffe9b0"/><circle cx="175.3" cy="148.1" r="2.3" fill="#ffe9b0"/><circle cx="191.8" cy="148.9" r="2.3" fill="#ffe9b0"/><circle cx="208.2" cy="148.9" r="2.3" fill="#ffe9b0"/><circle cx="224.7" cy="148.1" r="2.3" fill="#ffe9b0"/><circle cx="241.1" cy="146.5" r="2.3" fill="#ffe9b0"/><circle cx="257.6" cy="144.4" r="2.3" fill="#ffe9b0"/><circle cx="274.0" cy="142.0" r="2.3" fill="#ffe9b0"/><circle cx="286.0" cy="160.0" r="2.3" fill="#ffe9b0"/><circle cx="270.4" cy="158.6" r="2.3" fill="#ffe9b0"/><circle cx="254.7" cy="157.3" r="2.3" fill="#ffe9b0"/><circle cx="239.1" cy="156.2" r="2.3" fill="#ffe9b0"/><circle cx="223.5" cy="155.5" r="2.3" fill="#ffe9b0"/><circle cx="207.8" cy="155.1" r="2.3" fill="#ffe9b0"/><circle cx="192.2" cy="155.1" r="2.3" fill="#ffe9b0"/><circle cx="176.5" cy="155.5" r="2.3" fill="#ffe9b0"/><circle cx="160.9" cy="156.2" r="2.3" fill="#ffe9b0"/><circle cx="145.3" cy="157.3" r="2.3" fill="#ffe9b0"/><circle cx="129.6" cy="158.6" r="2.3" fill="#ffe9b0"/><circle cx="114.0" cy="160.0" r="2.3" fill="#ffe9b0"/><circle cx="200" cy="40" r="15" fill="url(#glowB)"/><path d="M200 28 l3.4 8.6 9.2.6-7.1 5.9 2.3 9-7.8-5-7.8 5 2.3-9-7.1-5.9 9.2-.6z" fill="#ffd166"/><ellipse cx="72" cy="178" rx="46" ry="30" fill="#243075"/><circle cx="34.0" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="49.2" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="64.4" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="79.6" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="94.8" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="110.0" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="41.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="56.5" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="72.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="87.5" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="103.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="48.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="64.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="80.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="96.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="34.0" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="49.2" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="64.4" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="79.6" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="94.8" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="110.0" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="41.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="56.5" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="72.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="87.5" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="103.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="48.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="64.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="80.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="96.0" cy="180.0" r="1.9" fill="#ffe9b0"/><ellipse cx="328" cy="178" rx="46" ry="30" fill="#243075"/><circle cx="290.0" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="305.2" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="320.4" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="335.6" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="350.8" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="366.0" cy="158.0" r="6" fill="url(#glowB)"/><circle cx="297.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="312.5" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="328.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="343.5" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="359.0" cy="169.0" r="6" fill="url(#glowB)"/><circle cx="304.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="320.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="336.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="352.0" cy="180.0" r="6" fill="url(#glowB)"/><circle cx="290.0" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="305.2" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="320.4" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="335.6" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="350.8" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="366.0" cy="158.0" r="1.9" fill="#ffe9b0"/><circle cx="297.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="312.5" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="328.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="343.5" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="359.0" cy="169.0" r="1.9" fill="#ffe9b0"/><circle cx="304.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="320.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="336.0" cy="180.0" r="1.9" fill="#ffe9b0"/><circle cx="352.0" cy="180.0" r="1.9" fill="#ffe9b0"/></svg></div>
         <div class="svc-body">
           <h3>Trees &amp; Shrubs</h3>
-          <p>Trunk wraps, canopy wraps and net-lit shrubs that give your yard depth after dark — not just a lit roof.</p>
+          <p>Trunk wraps, canopy wraps, net-lit shrubs and path lighting that give your yard real depth after dark — not just a lit roof.</p>
           <a href="#quote" class="svc-link">Get a quote →</a>
         </div>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><path d="M9.5 6.5 12 4l2.5 2.5"/><path d="M12 4v2.5"/><circle cx="12" cy="6" r=".9"/><circle cx="6.2" cy="15" r=".9"/><circle cx="17.8" cy="15" r=".9"/></svg>
-        </div>
+        <div class="svc-art" aria-hidden="true"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" role="img" xmlns="http://www.w3.org/2000/svg"><defs>
+<linearGradient id="skyC" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1a2360"/><stop offset="1" stop-color="#2c3aa8"/>
+</linearGradient>
+<radialGradient id="glowC">
+<stop offset="0" stop-color="#ffd166" stop-opacity=".85"/>
+<stop offset=".45" stop-color="#ffb400" stop-opacity=".35"/>
+<stop offset="1" stop-color="#ffb400" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="warmC">
+<stop offset="0" stop-color="#ffdf9a" stop-opacity=".55"/>
+<stop offset="1" stop-color="#ffdf9a" stop-opacity="0"/>
+</radialGradient>
+</defs><rect width="400" height="200" fill="url(#skyC)"/><circle cx="98.3" cy="29.9" r="1.4" fill="#fff" opacity="0.42"/><circle cx="189.9" cy="31.6" r="1.1" fill="#fff" opacity="0.52"/><circle cx="106.6" cy="16.3" r="1.1" fill="#fff" opacity="0.70"/><circle cx="215.9" cy="30.2" r="0.9" fill="#fff" opacity="0.43"/><circle cx="96.0" cy="12.7" r="1.1" fill="#fff" opacity="0.67"/><circle cx="293.6" cy="35.5" r="1.4" fill="#fff" opacity="0.28"/><circle cx="22.6" cy="40.3" r="1.1" fill="#fff" opacity="0.62"/><circle cx="189.4" cy="37.6" r="1.4" fill="#fff" opacity="0.65"/><circle cx="311.8" cy="24.8" r="1.4" fill="#fff" opacity="0.58"/><circle cx="178.5" cy="47.2" r="0.9" fill="#fff" opacity="0.65"/><rect x="0" y="0" width="400" height="200" fill="#1b2568" opacity=".55"/><rect x="0" y="182" width="400" height="18" fill="#101744"/><rect x="61" y="52" width="26" height="130" fill="#26307a"/><rect x="56" y="44" width="36" height="10" rx="2" fill="#2f3a90"/><circle cx="74.0" cy="62.0" r="6" fill="url(#glowC)"/><circle cx="81.6" cy="66.6" r="6" fill="url(#glowC)"/><circle cx="86.3" cy="71.2" r="6" fill="url(#glowC)"/><circle cx="86.5" cy="75.8" r="6" fill="url(#glowC)"/><circle cx="82.0" cy="80.4" r="6" fill="url(#glowC)"/><circle cx="74.5" cy="85.0" r="6" fill="url(#glowC)"/><circle cx="66.9" cy="89.6" r="6" fill="url(#glowC)"/><circle cx="61.9" cy="94.2" r="6" fill="url(#glowC)"/><circle cx="61.4" cy="98.8" r="6" fill="url(#glowC)"/><circle cx="65.6" cy="103.4" r="6" fill="url(#glowC)"/><circle cx="72.9" cy="108.0" r="6" fill="url(#glowC)"/><circle cx="80.6" cy="112.6" r="6" fill="url(#glowC)"/><circle cx="85.9" cy="117.2" r="6" fill="url(#glowC)"/><circle cx="86.7" cy="121.8" r="6" fill="url(#glowC)"/><circle cx="82.8" cy="126.4" r="6" fill="url(#glowC)"/><circle cx="75.6" cy="131.0" r="6" fill="url(#glowC)"/><circle cx="67.8" cy="135.6" r="6" fill="url(#glowC)"/><circle cx="62.3" cy="140.2" r="6" fill="url(#glowC)"/><circle cx="61.2" cy="144.8" r="6" fill="url(#glowC)"/><circle cx="64.8" cy="149.4" r="6" fill="url(#glowC)"/><circle cx="71.8" cy="154.0" r="6" fill="url(#glowC)"/><circle cx="79.7" cy="158.6" r="6" fill="url(#glowC)"/><circle cx="85.4" cy="163.2" r="6" fill="url(#glowC)"/><circle cx="86.9" cy="167.8" r="6" fill="url(#glowC)"/><circle cx="83.6" cy="172.4" r="6" fill="url(#glowC)"/><circle cx="76.7" cy="177.0" r="6" fill="url(#glowC)"/><circle cx="74.0" cy="62.0" r="1.9" fill="#ffe9b0"/><circle cx="81.6" cy="66.6" r="1.9" fill="#ffe9b0"/><circle cx="86.3" cy="71.2" r="1.9" fill="#ffe9b0"/><circle cx="86.5" cy="75.8" r="1.9" fill="#ffe9b0"/><circle cx="82.0" cy="80.4" r="1.9" fill="#ffe9b0"/><circle cx="74.5" cy="85.0" r="1.9" fill="#ffe9b0"/><circle cx="66.9" cy="89.6" r="1.9" fill="#ffe9b0"/><circle cx="61.9" cy="94.2" r="1.9" fill="#ffe9b0"/><circle cx="61.4" cy="98.8" r="1.9" fill="#ffe9b0"/><circle cx="65.6" cy="103.4" r="1.9" fill="#ffe9b0"/><circle cx="72.9" cy="108.0" r="1.9" fill="#ffe9b0"/><circle cx="80.6" cy="112.6" r="1.9" fill="#ffe9b0"/><circle cx="85.9" cy="117.2" r="1.9" fill="#ffe9b0"/><circle cx="86.7" cy="121.8" r="1.9" fill="#ffe9b0"/><circle cx="82.8" cy="126.4" r="1.9" fill="#ffe9b0"/><circle cx="75.6" cy="131.0" r="1.9" fill="#ffe9b0"/><circle cx="67.8" cy="135.6" r="1.9" fill="#ffe9b0"/><circle cx="62.3" cy="140.2" r="1.9" fill="#ffe9b0"/><circle cx="61.2" cy="144.8" r="1.9" fill="#ffe9b0"/><circle cx="64.8" cy="149.4" r="1.9" fill="#ffe9b0"/><circle cx="71.8" cy="154.0" r="1.9" fill="#ffe9b0"/><circle cx="79.7" cy="158.6" r="1.9" fill="#ffe9b0"/><circle cx="85.4" cy="163.2" r="1.9" fill="#ffe9b0"/><circle cx="86.9" cy="167.8" r="1.9" fill="#ffe9b0"/><circle cx="83.6" cy="172.4" r="1.9" fill="#ffe9b0"/><circle cx="76.7" cy="177.0" r="1.9" fill="#ffe9b0"/><rect x="313" y="52" width="26" height="130" fill="#26307a"/><rect x="308" y="44" width="36" height="10" rx="2" fill="#2f3a90"/><circle cx="326.0" cy="62.0" r="6" fill="url(#glowC)"/><circle cx="333.6" cy="66.6" r="6" fill="url(#glowC)"/><circle cx="338.3" cy="71.2" r="6" fill="url(#glowC)"/><circle cx="338.5" cy="75.8" r="6" fill="url(#glowC)"/><circle cx="334.0" cy="80.4" r="6" fill="url(#glowC)"/><circle cx="326.5" cy="85.0" r="6" fill="url(#glowC)"/><circle cx="318.9" cy="89.6" r="6" fill="url(#glowC)"/><circle cx="313.9" cy="94.2" r="6" fill="url(#glowC)"/><circle cx="313.4" cy="98.8" r="6" fill="url(#glowC)"/><circle cx="317.6" cy="103.4" r="6" fill="url(#glowC)"/><circle cx="324.9" cy="108.0" r="6" fill="url(#glowC)"/><circle cx="332.6" cy="112.6" r="6" fill="url(#glowC)"/><circle cx="337.9" cy="117.2" r="6" fill="url(#glowC)"/><circle cx="338.7" cy="121.8" r="6" fill="url(#glowC)"/><circle cx="334.8" cy="126.4" r="6" fill="url(#glowC)"/><circle cx="327.6" cy="131.0" r="6" fill="url(#glowC)"/><circle cx="319.8" cy="135.6" r="6" fill="url(#glowC)"/><circle cx="314.3" cy="140.2" r="6" fill="url(#glowC)"/><circle cx="313.2" cy="144.8" r="6" fill="url(#glowC)"/><circle cx="316.8" cy="149.4" r="6" fill="url(#glowC)"/><circle cx="323.8" cy="154.0" r="6" fill="url(#glowC)"/><circle cx="331.7" cy="158.6" r="6" fill="url(#glowC)"/><circle cx="337.4" cy="163.2" r="6" fill="url(#glowC)"/><circle cx="338.9" cy="167.8" r="6" fill="url(#glowC)"/><circle cx="335.6" cy="172.4" r="6" fill="url(#glowC)"/><circle cx="328.7" cy="177.0" r="6" fill="url(#glowC)"/><circle cx="326.0" cy="62.0" r="1.9" fill="#ffe9b0"/><circle cx="333.6" cy="66.6" r="1.9" fill="#ffe9b0"/><circle cx="338.3" cy="71.2" r="1.9" fill="#ffe9b0"/><circle cx="338.5" cy="75.8" r="1.9" fill="#ffe9b0"/><circle cx="334.0" cy="80.4" r="1.9" fill="#ffe9b0"/><circle cx="326.5" cy="85.0" r="1.9" fill="#ffe9b0"/><circle cx="318.9" cy="89.6" r="1.9" fill="#ffe9b0"/><circle cx="313.9" cy="94.2" r="1.9" fill="#ffe9b0"/><circle cx="313.4" cy="98.8" r="1.9" fill="#ffe9b0"/><circle cx="317.6" cy="103.4" r="1.9" fill="#ffe9b0"/><circle cx="324.9" cy="108.0" r="1.9" fill="#ffe9b0"/><circle cx="332.6" cy="112.6" r="1.9" fill="#ffe9b0"/><circle cx="337.9" cy="117.2" r="1.9" fill="#ffe9b0"/><circle cx="338.7" cy="121.8" r="1.9" fill="#ffe9b0"/><circle cx="334.8" cy="126.4" r="1.9" fill="#ffe9b0"/><circle cx="327.6" cy="131.0" r="1.9" fill="#ffe9b0"/><circle cx="319.8" cy="135.6" r="1.9" fill="#ffe9b0"/><circle cx="314.3" cy="140.2" r="1.9" fill="#ffe9b0"/><circle cx="313.2" cy="144.8" r="1.9" fill="#ffe9b0"/><circle cx="316.8" cy="149.4" r="1.9" fill="#ffe9b0"/><circle cx="323.8" cy="154.0" r="1.9" fill="#ffe9b0"/><circle cx="331.7" cy="158.6" r="1.9" fill="#ffe9b0"/><circle cx="337.4" cy="163.2" r="1.9" fill="#ffe9b0"/><circle cx="338.9" cy="167.8" r="1.9" fill="#ffe9b0"/><circle cx="335.6" cy="172.4" r="1.9" fill="#ffe9b0"/><circle cx="328.7" cy="177.0" r="1.9" fill="#ffe9b0"/><rect x="146" y="60" width="108" height="122" rx="3" fill="#141c4d"/><rect x="154" y="68" width="92" height="114" rx="2" fill="#2a3488"/><rect x="163" y="78" width="34" height="42" rx="2" fill="#222c78"/><rect x="203" y="78" width="34" height="42" rx="2" fill="#222c78"/><circle cx="238" cy="140" r="3" fill="#ffd166"/><circle cx="200" cy="112" r="27" fill="none" stroke="#1f9d55" stroke-width="13"/><circle cx="200" cy="112" r="27" fill="none" stroke="#186f3d" stroke-width="13" stroke-dasharray="7 11" opacity=".8"/><circle cx="227.0" cy="112.0" r="6" fill="url(#glowC)"/><circle cx="224.3" cy="123.7" r="6" fill="url(#glowC)"/><circle cx="216.8" cy="133.1" r="6" fill="url(#glowC)"/><circle cx="206.0" cy="138.3" r="6" fill="url(#glowC)"/><circle cx="194.0" cy="138.3" r="6" fill="url(#glowC)"/><circle cx="183.2" cy="133.1" r="6" fill="url(#glowC)"/><circle cx="175.7" cy="123.7" r="6" fill="url(#glowC)"/><circle cx="173.0" cy="112.0" r="6" fill="url(#glowC)"/><circle cx="175.7" cy="100.3" r="6" fill="url(#glowC)"/><circle cx="183.2" cy="90.9" r="6" fill="url(#glowC)"/><circle cx="194.0" cy="85.7" r="6" fill="url(#glowC)"/><circle cx="206.0" cy="85.7" r="6" fill="url(#glowC)"/><circle cx="216.8" cy="90.9" r="6" fill="url(#glowC)"/><circle cx="224.3" cy="100.3" r="6" fill="url(#glowC)"/><circle cx="227.0" cy="112.0" r="2" fill="#ffe9b0"/><circle cx="224.3" cy="123.7" r="2" fill="#ffe9b0"/><circle cx="216.8" cy="133.1" r="2" fill="#ffe9b0"/><circle cx="206.0" cy="138.3" r="2" fill="#ffe9b0"/><circle cx="194.0" cy="138.3" r="2" fill="#ffe9b0"/><circle cx="183.2" cy="133.1" r="2" fill="#ffe9b0"/><circle cx="175.7" cy="123.7" r="2" fill="#ffe9b0"/><circle cx="173.0" cy="112.0" r="2" fill="#ffe9b0"/><circle cx="175.7" cy="100.3" r="2" fill="#ffe9b0"/><circle cx="183.2" cy="90.9" r="2" fill="#ffe9b0"/><circle cx="194.0" cy="85.7" r="2" fill="#ffe9b0"/><circle cx="206.0" cy="85.7" r="2" fill="#ffe9b0"/><circle cx="216.8" cy="90.9" r="2" fill="#ffe9b0"/><circle cx="224.3" cy="100.3" r="2" fill="#ffe9b0"/><path d="M200 142 q-13 8 -17 22 q12 -3 17 -12 q5 9 17 12 q-4 -14 -17 -22 z" fill="#c0392b"/><circle cx="200" cy="141" r="7" fill="#e2493f"/><circle cx="197" cy="139" r="2" fill="#f07a70" opacity=".8"/><path d="M61.0 46.0 L74.9 53.4 L88.8 60.1 L102.7 65.2 L116.6 68.3 L130.5 69.0 L144.4 67.1 L158.3 62.8 L172.2 56.5 L186.1 48.6 L200.0 40.0" fill="none" stroke="#1f9d55" stroke-width="11" stroke-linecap="round"/><path d="M61.0 46.0 L74.9 53.4 L88.8 60.1 L102.7 65.2 L116.6 68.3 L130.5 69.0 L144.4 67.1 L158.3 62.8 L172.2 56.5 L186.1 48.6 L200.0 40.0" fill="none" stroke="#186f3d" stroke-width="11" stroke-linecap="round" stroke-dasharray="6 12" opacity=".75"/><path d="M200.0 40.0 L213.9 48.6 L227.8 56.5 L241.7 62.8 L255.6 67.1 L269.5 69.0 L283.4 68.3 L297.3 65.2 L311.2 60.1 L325.1 53.4 L339.0 46.0" fill="none" stroke="#1f9d55" stroke-width="11" stroke-linecap="round"/><path d="M200.0 40.0 L213.9 48.6 L227.8 56.5 L241.7 62.8 L255.6 67.1 L269.5 69.0 L283.4 68.3 L297.3 65.2 L311.2 60.1 L325.1 53.4 L339.0 46.0" fill="none" stroke="#186f3d" stroke-width="11" stroke-linecap="round" stroke-dasharray="6 12" opacity=".75"/><circle cx="61.0" cy="46.0" r="7" fill="url(#glowC)"/><circle cx="74.9" cy="53.4" r="7" fill="url(#glowC)"/><circle cx="88.8" cy="60.1" r="7" fill="url(#glowC)"/><circle cx="102.7" cy="65.2" r="7" fill="url(#glowC)"/><circle cx="116.6" cy="68.3" r="7" fill="url(#glowC)"/><circle cx="130.5" cy="69.0" r="7" fill="url(#glowC)"/><circle cx="144.4" cy="67.1" r="7" fill="url(#glowC)"/><circle cx="158.3" cy="62.8" r="7" fill="url(#glowC)"/><circle cx="172.2" cy="56.5" r="7" fill="url(#glowC)"/><circle cx="186.1" cy="48.6" r="7" fill="url(#glowC)"/><circle cx="200.0" cy="40.0" r="7" fill="url(#glowC)"/><circle cx="200.0" cy="40.0" r="7" fill="url(#glowC)"/><circle cx="213.9" cy="48.6" r="7" fill="url(#glowC)"/><circle cx="227.8" cy="56.5" r="7" fill="url(#glowC)"/><circle cx="241.7" cy="62.8" r="7" fill="url(#glowC)"/><circle cx="255.6" cy="67.1" r="7" fill="url(#glowC)"/><circle cx="269.5" cy="69.0" r="7" fill="url(#glowC)"/><circle cx="283.4" cy="68.3" r="7" fill="url(#glowC)"/><circle cx="297.3" cy="65.2" r="7" fill="url(#glowC)"/><circle cx="311.2" cy="60.1" r="7" fill="url(#glowC)"/><circle cx="325.1" cy="53.4" r="7" fill="url(#glowC)"/><circle cx="339.0" cy="46.0" r="7" fill="url(#glowC)"/><circle cx="61.0" cy="46.0" r="2" fill="#ffe9b0"/><circle cx="74.9" cy="53.4" r="2" fill="#ffe9b0"/><circle cx="88.8" cy="60.1" r="2" fill="#ffe9b0"/><circle cx="102.7" cy="65.2" r="2" fill="#ffe9b0"/><circle cx="116.6" cy="68.3" r="2" fill="#ffe9b0"/><circle cx="130.5" cy="69.0" r="2" fill="#ffe9b0"/><circle cx="144.4" cy="67.1" r="2" fill="#ffe9b0"/><circle cx="158.3" cy="62.8" r="2" fill="#ffe9b0"/><circle cx="172.2" cy="56.5" r="2" fill="#ffe9b0"/><circle cx="186.1" cy="48.6" r="2" fill="#ffe9b0"/><circle cx="200.0" cy="40.0" r="2" fill="#ffe9b0"/><circle cx="200.0" cy="40.0" r="2" fill="#ffe9b0"/><circle cx="213.9" cy="48.6" r="2" fill="#ffe9b0"/><circle cx="227.8" cy="56.5" r="2" fill="#ffe9b0"/><circle cx="241.7" cy="62.8" r="2" fill="#ffe9b0"/><circle cx="255.6" cy="67.1" r="2" fill="#ffe9b0"/><circle cx="269.5" cy="69.0" r="2" fill="#ffe9b0"/><circle cx="283.4" cy="68.3" r="2" fill="#ffe9b0"/><circle cx="297.3" cy="65.2" r="2" fill="#ffe9b0"/><circle cx="311.2" cy="60.1" r="2" fill="#ffe9b0"/><circle cx="325.1" cy="53.4" r="2" fill="#ffe9b0"/><circle cx="339.0" cy="46.0" r="2" fill="#ffe9b0"/></svg></div>
         <div class="svc-body">
           <h3>Wreaths &amp; Garland</h3>
-          <p>Lit wreaths, garland over doorways and wrapped columns — the details that make the front door look finished.</p>
-          <a href="#quote" class="svc-link">Get a quote →</a>
-        </div>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-ic" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M4.2 12H2M22 12h-2.2M6 6 4.6 4.6M19.4 19.4 18 18M18 6l1.4-1.4M4.6 19.4 6 18"/><circle cx="12" cy="12" r="3.6"/></svg>
-        </div>
-        <div class="svc-body">
-          <h3>Walkways &amp; Windows</h3>
-          <p>Path lighting, window frames and porch accents, all on timers so the whole display turns on by itself each night.</p>
+          <p>Lit wreaths, garland over the doorway and wrapped columns — the details that make the front of the house look finished.</p>
           <a href="#quote" class="svc-link">Get a quote →</a>
         </div>
       </div>
