@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trinityexteriorco.com/sitemap.xml\n
