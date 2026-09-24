@@ -18,8 +18,13 @@
 <meta property="og:url" content="https://trinityexteriorco.com/lights/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://i.ibb.co/6cBS7MDL/Chat-GPT-Image-Mar-7-2026-01-53-09-AM.avif">
+<meta property="og:image" content="https://trinityexteriorco.com/lights/christmas-roofline-lighting-project.webp">
+<meta property="og:image:width" content="1575">
+<meta property="og:image:height" content="999">
+<meta property="og:image:alt" content="Warm white Christmas lights outlining a home's roofline and gables at dusk">
 <link rel="icon" href="https://i.ibb.co/6cBS7MDL/Chat-GPT-Image-Mar-7-2026-01-53-09-AM.avif">
+<meta name="twitter:image" content="https://trinityexteriorco.com/lights/christmas-roofline-lighting-project.webp">
+<meta name="twitter:image:alt" content="Warm white Christmas lights outlining a home's roofline and gables at dusk">
 
 <!-- Faster fonts + images -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -381,6 +386,11 @@ section.pad{padding:74px 0}
   background:#fff;border:1px dashed var(--line);border-radius:14px;padding:18px 22px;
 }
 .season-note strong{color:var(--ink)}
+.project-showcase{max-width:1040px;margin:38px auto 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(26,35,96,.12)}
+.project-showcase picture,.project-showcase img{display:block;width:100%}
+.project-showcase img{height:auto;aspect-ratio:1575/999;object-fit:cover}
+.project-showcase figcaption{padding:18px 22px;color:var(--text);font-size:14.5px}
+.project-showcase figcaption strong{display:block;color:var(--ink);font-size:17px;margin-bottom:3px}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
@@ -396,22 +406,27 @@ section.pad{padding:74px 0}
 }
 @media (max-width:680px){
   section.pad{padding:56px 0}
+  .header-inner{padding:8px 18px}
   .header-phone .num-wrap{display:none}
   .header-phone{padding:10px;border:2px solid var(--blue);border-radius:11px}
-  .logo img{height:40px}
+  .logo img{height:36px}
   .logo-text{font-size:18px}
-  .hero{padding:20px 0 42px}
-  .hero-badge{margin-bottom:13px;font-size:11.5px;padding:7px 12px}
-  .hero-inner h1{font-size:29px;margin-bottom:12px}
-  .hero-kicker{font-size:11.5px;letter-spacing:.14em;margin-bottom:8px}
-  .hero-lead{margin-bottom:20px;font-size:15.5px}
-  .form-card{padding:22px 16px 20px}
+  .hero{padding:12px 0 34px}
+  .hero-badge{margin-bottom:10px;font-size:11.5px;padding:7px 12px}
+  .hero-inner h1{font-size:28px;margin-bottom:8px}
+  .hero-kicker{font-size:11.5px;letter-spacing:.14em;margin-bottom:5px}
+  .hero-inner .hero-lead{margin-bottom:14px;font-size:15px}
+  .form-card{padding:20px 16px 16px}
+  .form-card .fc-sub{margin-bottom:10px}
+  .field{margin-bottom:9px}
+  .field input,.field select{padding:10px 12px}
+  .btn-lg{padding:16px 26px;font-size:18px}
   .svc-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .reviews-grid{grid-template-columns:1fr}
   .trustbar-inner{grid-template-columns:1fr 1fr;gap:16px}
   .trust-item{flex-direction:column;text-align:center;gap:8px}
-  .sticky-cta{display:flex}
+  .sticky-cta.show{display:flex}
   body{padding-bottom:78px}
   .hero-actions .btn-cta{width:100%}
   .svc-picker{gap:8px}
@@ -568,6 +583,13 @@ section.pad{padding:74px 0}
       </div>
     </div>
     <p class="season-note reveal"><strong>One price covers all of it:</strong> the design, the lights, the install, any repairs during the season, takedown in January and storage until next year.</p>
+    <figure class="project-showcase reveal">
+      <picture>
+        <source media="(max-width:680px)" srcset="christmas-roofline-lighting-project-900.webp">
+        <img src="christmas-roofline-lighting-project.webp" srcset="christmas-roofline-lighting-project-900.webp 900w, christmas-roofline-lighting-project.webp 1575w" sizes="(max-width:680px) calc(100vw - 48px), 1040px" alt="Warm white Christmas lights outlining the roofline and gables of a home at dusk" width="1575" height="999" loading="lazy" decoding="async">
+      </picture>
+      <figcaption><strong>A finished roofline lighting project</strong>Clean, warm-white lines follow the roof edges and gables without nails or staples.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -749,7 +771,7 @@ section.pad{padding:74px 0}
   "@context":"https://schema.org",
   "@type":"HomeAndConstructionBusiness",
   "name":"Trinity Exterior Cleaning",
-  "image":"https://i.ibb.co/6cBS7MDL/Chat-GPT-Image-Mar-7-2026-01-53-09-AM.avif",
+  "image":"https://trinityexteriorco.com/lights/christmas-roofline-lighting-project.webp",
   "telephone":"+1-425-595-7758",
   "email":"louis@trinityexteriorco.com",
   "url":"https://trinityexteriorco.com/lights/",
@@ -830,6 +852,18 @@ document.querySelectorAll('[data-call]').forEach(function(el){
       status.className='form-status error';
     }
   });
+})();
+
+/* ---- Keep the mobile CTA from covering the hero quote form ---- */
+(function(){
+  var bar=document.querySelector('.sticky-cta');
+  var hero=document.querySelector('.hero');
+  if(!bar || !hero) return;
+  if(!('IntersectionObserver' in window)){ bar.classList.add('show'); return; }
+  var stickyObserver=new IntersectionObserver(function(entries){
+    bar.classList.toggle('show',!entries[0].isIntersecting);
+  },{threshold:0});
+  stickyObserver.observe(hero);
 })();
 
 /* ---- Subtle reveal-on-scroll (respects reduced motion) ---- */
