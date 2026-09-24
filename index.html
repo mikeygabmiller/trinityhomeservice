@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="1DOWFUEDNKuleOk3fi2ZVhMz2nlNSUPFIejwWnpj228">
 <title>Trinity Exterior Cleaning | Premium Exterior Cleaning Services</title>
 <meta name="description" content="Trinity Exterior Cleaning delivers premium exterior cleaning services - window cleaning, gutter cleaning, roof cleaning, and pressure washing.">
+<link rel="canonical" href="https://trinityexteriorco.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trinity Exterior Cleaning | Snohomish County, WA">
+<meta property="og:description" content="Exterior cleaning and professional Christmas-light installation serving Snohomish County and nearby communities.">
+<meta property="og:url" content="https://trinityexteriorco.com/">
+<meta property="og:image" content="https://trinityexteriorco.com/lights/full-house.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -378,6 +386,58 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.seasonal-service {
+  max-width: 1280px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) 1.2fr;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--blue-deep);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(30, 40, 112, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.seasonal-service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(30, 40, 112, 0.28);
+}
+
+.seasonal-service img {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.seasonal-service-copy {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.seasonal-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dce2ff;
+}
+
+.seasonal-service h3 {
+  margin: 8px 0 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.15;
+}
+
+.seasonal-service p { margin: 0 0 18px; color: #eef1ff; }
+.seasonal-link { font-weight: 700; }
+
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px rgba(46, 62, 176, 0.18);
@@ -712,6 +772,9 @@ body {
   .contact-inner { grid-template-columns: 1fr; gap: 50px; }
   .droplet { display: none; }
   .section-services { padding: 90px 5% 100px; }
+  .seasonal-service { grid-template-columns: 1fr; }
+  .seasonal-service img { min-height: 230px; max-height: 320px; }
+  .seasonal-service-copy { padding: 30px; }
   .section-testimonials { padding: 100px 5% 120px; }
 }
 
@@ -797,6 +860,7 @@ body {
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="/lights/" class="nav-link">Christmas Lights</a></li>
       <li><a href="#testimonials" class="nav-link">Reviews</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
       <li><a href="#contact" class="btn-primary">Free Quote</a></li>
@@ -878,6 +942,15 @@ body {
 <!-- SERVICES -->
 <section class="section-services" id="services">
   <h2 class="section-title">Our Services</h2>
+  <a class="seasonal-service" href="/lights/">
+    <img src="/lights/full-house.jpg" alt="Home with professionally installed Christmas lights" loading="lazy" width="1600" height="860">
+    <div class="seasonal-service-copy">
+      <span class="seasonal-label">Seasonal service</span>
+      <h3>Christmas Light Installation</h3>
+      <p>Commercial-grade LEDs supplied and custom-cut, with installation, seasonal repairs, takedown, and storage included.</p>
+      <span class="seasonal-link">Explore Christmas lighting →</span>
+    </div>
+  </a>
   <div class="services-grid">
 
     <div class="service-card">
@@ -1225,5 +1298,31 @@ footer { padding-bottom: 90px; }
   footer { padding-bottom: initial; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://trinityexteriorco.com/#business",
+  "name": "Trinity Exterior Cleaning",
+  "url": "https://trinityexteriorco.com/",
+  "telephone": "+1-425-595-7758",
+  "email": "louis@trinityexteriorco.com",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Snohomish County, WA"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Exterior home services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Window cleaning"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gutter cleaning"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Roof cleaning"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Pressure washing"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Christmas light installation","url":"https://trinityexteriorco.com/lights/"}}
+    ]
+  }
+}
+</script>
 </body>
 </html>
