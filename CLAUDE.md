@@ -49,7 +49,7 @@ first. A wrong claim on a live lead-generation page is worse than a slow turnaro
 
 - Owner-operated, Louis does the work himself
 - Licensed, bonded and insured
-- 5.0 on Google, 28 verified reviews — all for **cleaning** work, not lighting
+- 5.0 on Google, 34 reviews as checked on 2026-09-24 — for **cleaning** work, not lighting; recheck the count before reusing it
 - Phone/text 425-595-7758, louis@trinityexteriorco.com
 - Snohomish County plus surrounding towns
 - Holiday lighting: Trinity supplies commercial-grade LEDs, custom-cut, hung on
@@ -64,7 +64,7 @@ first. A wrong claim on a live lead-generation page is worse than a slow turnaro
 **Unverified — ask before using:**
 
 - Total customer count. A `/book` draft claimed "hundreds of homeowners" against
-  28 reviews. Do not use a number I have not given you.
+  the review count. Do not use a total-customer number I have not given you.
 
 ### 3. Ship immediately
 
