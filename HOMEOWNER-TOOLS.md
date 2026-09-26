@@ -29,13 +29,19 @@ Before enabling ranges, obtain Louis's actual rules: whether a footage model is 
 
 ## Contact and privacy
 
-The existing landing forms have no notes fields. Each tool instead offers copyable notes and an email compose link to the established public business email. The visitor reviews and sends the message in their own app. A separate callback link uses the existing landing form unchanged. The tools themselves do not send messages, submit forms, upload files, collect contact details, or persist selections.
+The existing landing forms have no notes fields and remain unchanged. Tools offer copyable notes and an email compose link to the established public business email. The visitor reviews and sends that message in their own app.
+
+The lighting estimator also has an optional name/phone callback form directly below the price. It requires explicit permission to call/text about this quote. `estimator-callback.mjs` sends the contact details and current estimate notes only on submit, using FormSubmit's documented AJAX endpoint and the same recipient as the existing `/lights/` form. No phone-gating of prices, exit popup, unsubmitted-field capture, browser contact storage or customer auto-reply is used. Do not claim an abandoned visitor can be contacted if they never submit.
+
+The form blocks invalid contact data and concurrent submissions, uses the existing honeypot pattern, and shows success only after a successful HTTP response plus provider acceptance. Network errors, malformed responses and provider rejection show a call/text fallback. A 20-second timeout never triggers an automatic retry. Provider acceptance is not proof of inbox delivery. Tests use a fake transport and never send real leads; end-to-end inbox receipt has not been tested here. Source: [FormSubmit AJAX documentation](https://formsubmit.co/ajax-documentation).
 
 ## Measurement
 
 `seo-measure.mjs` groups the two new lighting pages under Christmas lighting and gutter help under Gutters. The mixed-service project library remains Shared / booking. New pages have no established search baseline yet; missing rows are unavailable, not zero.
 
 The browser queues `seo_tool_start`, `seo_tool_result`, `seo_tool_filter`, and `seo_quote_click` in `dataLayer` with fixed tool/choice labels. Search terms, roofline measurements, note contents and customer information are excluded. These hooks **are not a connected analytics system**: no tag or analytics ID is installed here. Quote clicks are not submitted leads. Once analytics and CRM attribution are authorized and connected, verify consent and delivery, then measure landing → tool → quote intent → qualified lead → booked job. Search Console alone cannot measure those steps.
+
+The callback form queues `seo_lead_accepted` only after the provider acknowledges submission, with fixed tool/method labels. No names, phone numbers, estimate text or customer IDs go into the analytics event or page URL. This is an accepted form submission, not a qualified lead, completed call or booked job.
 
 ## Growing the project library
 
