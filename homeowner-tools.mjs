@@ -2,6 +2,7 @@
 // explicitly configured analytics listener before they can be reported centrally.
 export function estimateBudget(input, rules) {
   if (!rules || rules.approved !== true || !rules.approvedOn || !rules.scope || rules.currency !== 'USD') return null;
+  if (rules.standardAccessOnly === true && input.access !== 'standard') return null;
   const rate = rules.rates?.[input.stories];
   const feet = Number(input.feet);
   if (!Number.isFinite(feet) || feet < 1 || feet > 1000 || !rate) return null;
@@ -90,7 +91,8 @@ if (typeof document !== 'undefined') {
     const estimate=estimateBudget(data,rules);
     const budget=document.getElementById('budget-result');
     budget.textContent=estimate ? `Planning range: $${estimate.low.toLocaleString('en-US')}–$${estimate.high.toLocaleString('en-US')}. ${estimate.scope} Final pricing follows a property-specific quote.` : 'Your plan is ready for a property-specific quote. Louis will confirm measurements, access and pricing.';
-    document.getElementById('lighting-notes').value=`Christmas lighting quote notes\nHome: ${data.stories}.\nCoverage to discuss: ${data.coverage}.\nLook: ${data.look}.\nRoofline length: ${data.feet ? `${data.feet} feet (my estimate; please confirm)` : 'not measured'}.\n${estimate ? budget.textContent+'\n' : ''}Please confirm which roof edges are included and the final price. I can add my town and a front-of-house photo with my quote request.`;
+    const accessLabel={standard:'appears straightforward; please confirm',custom:'steep, difficult access or added decorations',unknown:'not sure; please assess'}[data.access] || 'not specified';
+    document.getElementById('lighting-notes').value=`Christmas lighting quote notes\nHome: ${data.stories}.\nCoverage to discuss: ${data.coverage}.\nLook: ${data.look}.\nAccess: ${accessLabel}.\nRoofline length: ${data.feet ? `${data.feet} feet (my estimate; please confirm)` : 'not measured'}.\n${estimate ? budget.textContent+'\n' : ''}Please confirm which roof edges are included and the final price. I can add my town and a front-of-house photo with my quote request.`;
     document.getElementById('lighting-result').hidden=false;event('seo_tool_result','lighting-plan');
     document.getElementById('lighting-result').scrollIntoView({block:'nearest'});
   });
