@@ -11,6 +11,14 @@ export function estimateBudget(input, rules) {
   // measurements are quoted individually; no house-size-to-footage guesses.
   return { low: Math.ceil(Math.max(rules.minimum, feet * rate.low)), high: Math.ceil(Math.max(rules.minimum, feet * rate.high)), scope: rules.scope };
 }
+export function lightingPriceDisplay(input,rules) {
+  const money=n=>'$'+n.toLocaleString('en-US');
+  const estimate=estimateBudget(input,rules);
+  if(estimate)return {estimate,amount:estimate.low===estimate.high?money(estimate.low):`${money(estimate.low)}–${money(estimate.high)}`,message:estimate.scope};
+  if(input.access==='custom'||!['one story','two stories'].includes(input.stories))return {estimate:null,amount:'Custom quote',message:'Three-story homes, uncertain home height, steep or difficult access and added decorations need a property-specific quote.'};
+  if(!estimateBudget({...input,feet:1,access:'standard'},rules))return {estimate:null,amount:'Request a quote',message:'Louis will confirm measurements, access and pricing.'};
+  return {estimate:null,amount:`From ${money(rules.minimum)}`,message:'Minimum for standard-access roofline projects, before any applicable tax. Enter the feet of roof edge to be lit and choose straightforward access to see your estimated range. Unknown measurements or access need a property-specific quote.'};
+}
 export const maintenance = {
   evergreen: 'Evergreens nearby: plan a check before the rainy season and after storms that drop needles or branches. Base the next cleaning on what has accumulated.',
   deciduous: 'Leaf-shedding trees nearby: plan cleaning after the main late-fall leaf drop. Recheck if more debris falls or overflow returns.',
@@ -85,15 +93,22 @@ if (typeof document !== 'undefined') {
     document.getElementById('gutter-result').scrollIntoView({block:'nearest'});
   });
   const lighting=document.getElementById('lighting-form');
-  lighting?.addEventListener('submit',e=>{
-    e.preventDefault();const data=Object.fromEntries(new FormData(lighting));
+  const updateLighting=()=>{
+    const data=Object.fromEntries(new FormData(lighting));
     const rules=JSON.parse(document.getElementById('budget-rules').textContent);
-    const estimate=estimateBudget(data,rules);
+    const price=lightingPriceDisplay(data,rules);
+    const estimate=price.estimate;
     const budget=document.getElementById('budget-result');
-    budget.textContent=estimate ? `Planning range: $${estimate.low.toLocaleString('en-US')}–$${estimate.high.toLocaleString('en-US')}. ${estimate.scope} Final pricing follows a property-specific quote.` : 'Your plan is ready for a property-specific quote. Louis will confirm measurements, access and pricing.';
+    const amount=document.getElementById('budget-amount');
+    if(amount)amount.textContent=price.amount;
+    budget.textContent=amount ? price.message : `${price.amount}. ${price.message}`;
     const accessLabel={standard:'appears straightforward; please confirm',custom:'steep, difficult access or added decorations',unknown:'not sure; please assess'}[data.access] || 'not specified';
-    document.getElementById('lighting-notes').value=`Christmas lighting quote notes\nHome: ${data.stories}.\nCoverage to discuss: ${data.coverage}.\nLook: ${data.look}.\nAccess: ${accessLabel}.\nRoofline length: ${data.feet ? `${data.feet} feet (my estimate; please confirm)` : 'not measured'}.\n${estimate ? budget.textContent+'\n' : ''}Please confirm which roof edges are included and the final price. I can add my town and a front-of-house photo with my quote request.`;
-    document.getElementById('lighting-result').hidden=false;event('seo_tool_result','lighting-plan');
+    document.getElementById('lighting-notes').value=`Christmas lighting quote notes\nHome: ${data.stories}.\nCoverage to discuss: ${data.coverage}.\nLook: ${data.look}.\nAccess: ${accessLabel}.\nRoofline length: ${data.feet ? `${data.feet} feet (my estimate; please confirm)` : 'not measured'}.\n${estimate ? 'Planning range: '+price.amount+'. '+budget.textContent+'\n' : ''}Please confirm which roof edges are included and the final price. I can add my town and a front-of-house photo with my quote request.`;
+    document.getElementById('lighting-result').hidden=false;
+  };
+  if(lighting){updateLighting();lighting.addEventListener('input',updateLighting);lighting.addEventListener('change',updateLighting);}
+  lighting?.addEventListener('submit',e=>{
+    e.preventDefault();updateLighting();event('seo_tool_result','lighting-plan');
     document.getElementById('lighting-result').scrollIntoView({block:'nearest'});
   });
   document.querySelectorAll('[data-enhanced]').forEach(el=>el.hidden=false);

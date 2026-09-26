@@ -4,14 +4,16 @@ Four public entry points support lighting first and gutters second. Existing `/l
 
 | Page | Purpose | Current content |
 | --- | --- | --- |
-| `/christmas-lighting-cost/` | Build a lighting quote brief and explain scope | Working planner; dollar ranges disabled pending Louis's approved pricing |
+| `/christmas-lighting-cost/` | Estimate lighting cost and build a quote brief | Approved ranges: $600 minimum; one story $5–$8/ft; two stories $7–$10/ft |
 | `/christmas-lighting-ideas/` | Choose a reference design | Two owner-approved warm-white roofline project photos |
 | `/projects/` | Search/filter real job proof | Two lighting projects and three owner-confirmed cleaning photos |
 | `/gutter-help/` | Describe symptoms and discuss repeat maintenance | Ground-level observation prompts and county vegetation-based guidance |
 
 ## Pricing gate
 
-The lighting page's `budget-rules` JSON has `approved:false` and no rates. The range engine fails closed on missing/invalid rules or measurements. There are no live sample prices. Its arithmetic tests use synthetic numbers labeled TEST ONLY.
+Louis approved showing his saved rates on September 26, 2026. The lighting page's `budget-rules` JSON has `approved:true`, a $600 minimum, one-story rates of $5–$8/ft and two-story rates of $7–$10/ft, before any applicable tax. Standard-access rooflines only; unknown measurements/access receive a starting-price prompt, while three stories, difficult access and extras require a custom quote. The estimator shows the starting price on load and updates ranges and quote notes as inputs change. No roofline length is guessed. `/lights/` is unchanged.
+
+The range engine still fails closed on missing/unapproved/invalid rules. Owner-editor exports remain drafts; approving this version does not preapprove future edits. Synthetic arithmetic tests are labeled TEST ONLY, and a separate test verifies the approved public rates and exclusions.
 
 ### Editable owner recommendations
 
