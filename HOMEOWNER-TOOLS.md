@@ -13,6 +13,16 @@ Four public entry points support lighting first and gutters second. Existing `/l
 
 The lighting page's `budget-rules` JSON has `approved:false` and no rates. The range engine fails closed on missing/invalid rules or measurements. There are no live sample prices. Its arithmetic tests use synthetic numbers labeled TEST ONLY.
 
+### Editable owner recommendations
+
+Run `node lighting-pricing-editor.mjs` from the repository root to create `seo-output/lighting-pricing-editor.html`. Open the generated file in a browser. It is standalone and works offline. This output remains ignored; do not commit or publish it as an admin page. The source generator contains proposed market-based starting numbers, not approved customer prices.
+
+The editor lets Louis adjust the minimum, one-story/two-story low and high rates, and scope text. It previews sample jobs using the same calculation function as the public tool, saves drafts in browser storage when available, imports/exports a versioned settings file, and downloads a portable copy of itself. Exports always use `approved:false`. No network request or publication happens from the editor. The HTML file contains no customer data or credentials; a local preview is not an authenticated admin interface.
+
+Proposed defaults: $750 minimum, $6–$8/ft one story, $8–$10/ft two stories, before any applicable tax; difficult access, three-story work and extras require a custom quote. These are recommendations to validate against actual all-season costs, not a local average or a guarantee of profitability. Source links and reasoning are in the editor. No renewal discount is assumed.
+
+To activate a chosen version, obtain Louis's explicit approval of its exact numbers and scope. Validate its saved `settings` with `validateSettings`, convert using `draftRules`, then set the approved date/flag only as part of that authorized branch/PR change to the lighting planner's inline `budget-rules`. Preserve `standardAccessOnly:true`; the new access field defaults to unknown, which cannot receive an automatic price under these rules. Verify the actual supported heights, bounds, minimum and custom-quote cases after deployment. Do not merely paste an arbitrary imported `rules` object or treat saving a draft as approval.
+
 Before enabling ranges, obtain Louis's actual rules: whether a footage model is appropriate, rate bounds for supported home heights, minimum, scope/inclusions, taxes and any access restrictions. Validate against approved actual quotes. `approvedOn` records the date and `scope` is shown with every result. Unsupported heights or unknown measurements get a property-specific quote instead. More complex pricing requires extending the engine and tests, not forcing it into these fields. Never infer roofline footage from house floor area. Never activate an estimate from test fixtures.
 
 ## Contact and privacy
