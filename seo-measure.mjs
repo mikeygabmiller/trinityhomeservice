@@ -40,8 +40,8 @@ export function aggregate(rows) {
 
 export function service(page) {
   const p = new URL(page).pathname;
-  if (p === '/lights/' || p.startsWith('/lights/')) return 'Christmas lighting';
-  if (p === '/gutter-cleaning/') return 'Gutters';
+  if (p === '/lights/' || p.startsWith('/lights/') || ['/christmas-lighting-cost/','/christmas-lighting-ideas/'].includes(p)) return 'Christmas lighting';
+  if (p === '/gutter-cleaning/' || p === '/gutter-help/') return 'Gutters';
   if (p === '/window-cleaning/') return 'Windows';
   if (p === '/roof-cleaning/') return 'Roofs';
   return 'Shared / booking';
