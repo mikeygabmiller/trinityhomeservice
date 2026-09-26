@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {estimateBudget,gutterPlan} from './homeowner-tools.mjs';
+import {estimateBudget,gutterPlan,lightingPriceDisplay} from './homeowner-tools.mjs';
 import {service} from './seo-measure.mjs';
 import {draftStory} from './job-story.mjs';
 // Synthetic numbers ONLY for arithmetic tests; these are not Trinity prices.
@@ -12,7 +12,20 @@ test('unapproved or incomplete prices never produce a range',()=>{
   assert.equal(estimateBudget({stories:'one',feet:100},{...rules,rates:{one:{low:5,high:2}}}),null);
   const html=fs.readFileSync(new URL('./christmas-lighting-cost/index.html',import.meta.url),'utf8');
   const liveRules=JSON.parse(html.match(/id="budget-rules">([^<]+)</)[1]);
-  assert.equal(liveRules.approved,false);assert.equal(estimateBudget({stories:'one',feet:100},liveRules),null);
+  assert.equal(estimateBudget({stories:'one story',feet:100,access:'standard'},{...liveRules,approved:false}),null);
+});
+test('published owner-approved prices honor the floor, rates and custom-quote exclusions',()=>{
+  const html=fs.readFileSync(new URL('./christmas-lighting-cost/index.html',import.meta.url),'utf8');
+  const published=JSON.parse(html.match(/id="budget-rules">([^<]+)</)[1]);
+  assert.equal(published.approved,true);assert.equal(published.minimum,600);
+  const input={stories:'one story',feet:150,access:'standard'};
+  assert.equal(lightingPriceDisplay(input,published).amount,'$750–$1,200');
+  assert.equal(lightingPriceDisplay({...input,stories:'two stories'},published).amount,'$1,050–$1,500');
+  assert.equal(lightingPriceDisplay({...input,feet:50},published).amount,'$600');
+  assert.equal(lightingPriceDisplay({...input,feet:''},published).amount,'From $600');
+  assert.equal(lightingPriceDisplay({...input,access:'unknown'},published).estimate,null);
+  assert.equal(lightingPriceDisplay({...input,access:'custom'},published).amount,'Custom quote');
+  assert.equal(lightingPriceDisplay({...input,stories:'three or more stories'},published).estimate,null);
 });
 test('range arithmetic respects minimums and rejects unknown or invalid footage',()=>{
   assert.deepEqual(estimateBudget({stories:'one',feet:100},rules),{low:200,high:300,scope:'TEST ONLY'});
