@@ -49,7 +49,7 @@ first. A wrong claim on a live lead-generation page is worse than a slow turnaro
 
 - Owner-operated, Louis does the work himself
 - Licensed, bonded and insured
-- 5.0 on Google, 34 reviews as checked on 2026-09-24 — for **cleaning** work, not lighting; recheck the count before reusing it
+- Google reviews cover both cleaning and lighting work. Link to current reviews at https://share.google/9lr3SAAIuRhdXml0r; avoid hard-coded aggregate ratings/counts and do not label the entire collection as cleaning reviews. Preserve individual review quotes and their service context.
 - Phone/text 425-595-7758, louis@trinityexteriorco.com
 - Snohomish County plus surrounding towns
 - Holiday lighting: Trinity supplies commercial-grade LEDs, custom-cut, hung on
