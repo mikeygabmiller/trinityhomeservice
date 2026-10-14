@@ -515,7 +515,7 @@ section.pad{padding:74px 0}
         <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
       </form>
 
-      <div class="form-success" id="formSuccess">
+      <div class="form-success" id="formSuccess" tabindex="-1">
         <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
         <h3>Request received — thank you!</h3>
         <p>Louis will call you about your lighting quote.</p>
@@ -820,39 +820,49 @@ document.querySelectorAll('[data-call]').forEach(function(el){
   var status=document.getElementById('formStatus');
   var success=document.getElementById('formSuccess');
   if(!form) return;
+  var required=form.querySelectorAll('[required]');
+  var phone=form.querySelector('[name="phone"]');
+  required.forEach(function(field){
+    field.addEventListener('input',function(){field.setCustomValidity('');});
+  });
 
   form.addEventListener('submit',async function(e){
     e.preventDefault();
+    if(form.dataset.sending==='true')return;
 
-    // minimal client-side validation
-    var required=form.querySelectorAll('[required]');
-    for(var i=0;i<required.length;i++){
-      if(!required[i].value.trim()){
-        required[i].focus();
-        status.textContent='Please fill in your '+ (required[i].previousElementSibling? required[i].previousElementSibling.textContent.toLowerCase() : 'details') +'.';
-        status.className='form-status error';
-        return;
-      }
-    }
+    required.forEach(function(field){
+      field.value=field.value.trim();
+      field.setCustomValidity(field.value?'':'Please fill out this field.');
+    });
+    var digits=phone.value.replace(/\D/g,'');
+    phone.setCustomValidity(/^[+()\d\s.\-]+$/.test(phone.value) && digits.length>=10 && digits.length<=15 ? '' : 'Please enter a phone number with 10 to 15 digits.');
+    if(!form.reportValidity())return;
 
     var btn=form.querySelector('button[type="submit"]');
     var original=btn.textContent;
+    form.dataset.sending='true';
     btn.disabled=true; btn.textContent='Sending…';
     status.textContent=''; status.className='form-status';
+    var controller=new AbortController();
+    var timeout=setTimeout(function(){controller.abort();},15000);
 
     try{
-      var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      var res=await fetch('https://formsubmit.co/ajax/louisroymiller@gmail.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'},signal:controller.signal});
       if(!res.ok) throw new Error('bad status');
+      var result=await res.json();
+      if(!result || !(result.success===true || result.success==='true'))throw new Error('Submission unconfirmed');
       form.style.display='none';
       success.classList.add('show');
+      success.focus();
       reportConversion('form');
-      if(history.replaceState){ history.replaceState(null,'',location.pathname+'#thank-you'); }
+      if(history.replaceState){ history.replaceState(null,'',location.pathname+location.search+'#thank-you'); }
       success.scrollIntoView({behavior:'smooth',block:'center'});
     }catch(err){
       btn.disabled=false; btn.textContent=original;
-      status.textContent='Something went wrong. Please call or text 425-595-7758.';
+      delete form.dataset.sending;
+      status.textContent='We could not confirm your request. Please call or text 425-595-7758, or try again.';
       status.className='form-status error';
-    }
+    }finally{clearTimeout(timeout);}
   });
 })();
 
@@ -892,3 +902,4 @@ document.querySelectorAll('[data-call]').forEach(function(el){
 </script>
 </body>
 </html>\n
+
