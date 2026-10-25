@@ -42,7 +42,7 @@
       if (result.success !== true && result.success !== 'true') throw new Error('Submission unconfirmed');
       form.hidden = true; success.classList.add('show'); success.focus(); event('form_success');
     } catch {
-      status.textContent = 'We could not confirm your request. Please call or text 425-595-7758, or try again.';
+      status.textContent = 'We could not confirm your request. Please call or text 425-325-4152, or try again.';
       status.className = 'form-status error'; btn.disabled = false; btn.textContent = original;
       delete form.dataset.sending;
     } finally { clearTimeout(timeout); }
